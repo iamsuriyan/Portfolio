@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 3044",
-    "build": "next build",
+    "build": "next build && node fix-paths.js",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll"
+    "deploy": "next build && node fix-paths.js && touch out/.nojekyll"
   },
   "dependencies": {
     "next": "15.4.6",
