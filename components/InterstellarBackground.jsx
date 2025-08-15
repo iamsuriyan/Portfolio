@@ -6,25 +6,32 @@ export default function InterstellarBackground() {
   const [stars, setStars] = useState([]);
   const [distantStars, setDistantStars] = useState([]);
   const [nebulaLayers, setNebulaLayers] = useState([]);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     // Generate realistic star field like real space
     const generateRealisticStars = () => {
       const starArray = [];
       const distantStarArray = [];
-      
+
       // Generate main stars with natural distribution
       for (let i = 0; i < 300; i++) {
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        
+
         const brightness = Math.random() > 0.8 ? Math.random() * 0.6 + 0.4 : Math.random() * 0.3 + 0.1;
         const size = brightness > 0.5 ? Math.random() * 1 + 0.4 : Math.random() * 0.5 + 0.2;
-        
+
         let color = 'white';
         if (brightness > 0.7 && Math.random() > 0.9) color = 'blue';
         else if (brightness > 0.5 && Math.random() > 0.95) color = 'yellow';
-        
+
         starArray.push({
           id: `star-${i}`,
           x,
@@ -34,14 +41,14 @@ export default function InterstellarBackground() {
           color
         });
       }
-      
+
       // Generate distant background stars
       for (let i = 0; i < 500; i++) {
         const x = Math.random() * 100;
         const y = Math.random() * 100;
         const brightness = Math.random() * 0.2 + 0.02; // Very faint
         const size = Math.random() * 0.4 + 0.1;
-        
+
         distantStarArray.push({
           id: `distant-${i}`,
           x,
@@ -50,7 +57,7 @@ export default function InterstellarBackground() {
           brightness
         });
       }
-      
+
       return { starArray, distantStarArray };
     };
 
@@ -78,21 +85,30 @@ export default function InterstellarBackground() {
 
     const { starArray, distantStarArray } = generateRealisticStars();
     const nebulaLayers = generateSubtleNebulaLayers();
-    
+
     setStars(starArray);
     setDistantStars(distantStarArray);
     setNebulaLayers(nebulaLayers);
-  }, []);
+  }, [isClient]);
+
+  // Don't render anything until client-side
+  if (!isClient) {
+    return (
+      <div className="fixed inset-0 w-full h-full overflow-hidden" style={{ zIndex: -1 }}>
+        <div className="absolute inset-0 bg-black"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden" style={{ zIndex: -1 }}>
-      {/* Deep space background */}
+      {/* Deep space background - pure black */}
       <div className="absolute inset-0 bg-black"></div>
-      
+
       {/* Very subtle cosmic gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950/5 to-black"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/2"></div>
-      
+
       {/* Very subtle nebula layers */}
       {nebulaLayers.map((nebula) => {
         const getNebulaColor = () => {
@@ -102,7 +118,7 @@ export default function InterstellarBackground() {
             default: return 'rgba(147, 51, 234, 0.008)';
           }
         };
-        
+
         return (
           <div
             key={nebula.id}
@@ -119,7 +135,7 @@ export default function InterstellarBackground() {
           />
         );
       })}
-      
+
       {/* Distant background stars */}
       {distantStars.map((star) => (
         <div
@@ -145,10 +161,10 @@ export default function InterstellarBackground() {
             default: return 'rgba(255, 255, 255, 0.95)';
           }
         };
-        
+
         const starColor = getStarColor();
         const glowIntensity = star.brightness * 0.5;
-        
+
         return (
           <div
             key={star.id}
