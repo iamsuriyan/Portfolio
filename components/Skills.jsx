@@ -8,7 +8,7 @@ function SkillItem({ name, icon }) {
           className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
         />
       </div>
-      <span className="text-white/80 font-medium text-center text-xs group-hover:text-cyan-300 transition-colors duration-300">
+      <span className="text-white/80 font-medium text-center text-xs group-hover:text-blue-300 transition-colors duration-300">
         {name}
       </span>
     </div>
@@ -55,7 +55,7 @@ export default function Skills() {
           <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"></div>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Technologies and tools I use to bring ideas to life and deliver exceptional digital experiences.
           </p>

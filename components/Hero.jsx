@@ -14,10 +14,10 @@ export default function Hero() {
               SURIYAN
             </h1>
             <div className="space-y-2">
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-300">
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-300">
                 Full Stack Developer
               </p>
-              <p className="text-xl sm:text-2xl text-purple-300">
+              <p className="text-xl sm:text-2xl text-indigo-300">
                 Scalable Applications
               </p>
             </div>
@@ -35,15 +35,15 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <a
               href="mailto:suriyandhanapal@gmail.com"
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
             >
               <span>Get In Touch</span>
               <FiMail size={18} />
             </a>
             <a
-              href="/SURIYAN-SD.pdf"
-              download="Suriyan_Resume.pdf"
-              className="px-6 py-3 border-2 border-white/30 text-white font-medium rounded-lg hover:border-cyan-300 hover:text-cyan-300 hover:bg-white/10 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm"
+              href="/Suriyan-SD.pdf"
+              download="Suriyan-SD.pdf"
+              className="px-6 py-3 border-2 border-white/30 text-white font-medium rounded-lg hover:border-blue-300 hover:text-blue-300 hover:bg-white/10 transition-all duration-300 flex items-center space-x-2 backdrop-blur-sm"
             >
               <FiDownload size={18} />
               <span>Resume</span>
@@ -56,7 +56,7 @@ export default function Hero() {
               href="https://github.com/iamsuriyan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-cyan-300 transition-colors duration-300"
+              className="text-white/70 hover:text-blue-300 transition-colors duration-300"
             >
               <FiGithub size={24} />
             </a>
@@ -64,13 +64,13 @@ export default function Hero() {
               href="https://www.linkedin.com/in/suriyan-d-74514223a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-purple-300 transition-colors duration-300"
+              className="text-white/70 hover:text-indigo-300 transition-colors duration-300"
             >
               <FiLinkedin size={24} />
             </a>
             <a
               href="mailto:suriyandhanapal@gmail.com"
-              className="text-white/70 hover:text-cyan-300 transition-colors duration-300"
+              className="text-white/70 hover:text-blue-300 transition-colors duration-300"
             >
               <FiMail size={24} />
             </a>
@@ -80,7 +80,7 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#about" className="text-white/60 hover:text-purple-300 transition-colors">
+        <a href="#about" className="text-white/60 hover:text-indigo-300 transition-colors">
           <FiArrowDown size={24} />
         </a>
       </div>

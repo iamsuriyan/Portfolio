@@ -41,16 +41,16 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-white/90 hover:text-cyan-300 transition-colors duration-300 font-medium">
+            <a href="#about" className="text-white/90 hover:text-blue-300 transition-colors duration-300 font-medium">
               About
             </a>
-            <a href="#skills" className="text-white/90 hover:text-purple-300 transition-colors duration-300 font-medium">
+            <a href="#skills" className="text-white/90 hover:text-indigo-300 transition-colors duration-300 font-medium">
               Skills
             </a>
-            <a href="#projects" className="text-white/90 hover:text-cyan-300 transition-colors duration-300 font-medium">
+            <a href="#projects" className="text-white/90 hover:text-blue-300 transition-colors duration-300 font-medium">
               Projects
             </a>
-            <a href="#contact" className="text-white/90 hover:text-purple-300 transition-colors duration-300 font-medium">
+            <a href="#contact" className="text-white/90 hover:text-indigo-300 transition-colors duration-300 font-medium">
               Contact
             </a>
           </div>
@@ -59,7 +59,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-3 rounded-lg text-white/90 hover:text-cyan-300 hover:bg-white/10 transition-colors duration-300"
+              className="p-3 rounded-lg text-white/90 hover:text-blue-300 hover:bg-white/10 transition-colors duration-300"
             >
               {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
             </button>
@@ -72,28 +72,28 @@ export default function Navigation() {
             <div className="flex flex-col space-y-4">
               <a 
                 href="#about" 
-                className="text-lg font-medium text-white/90 hover:text-cyan-300 transition-colors duration-300"
+                className="text-lg font-medium text-white/90 hover:text-blue-300 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#skills" 
-                className="text-lg font-medium text-white/90 hover:text-purple-300 transition-colors duration-300"
+                className="text-lg font-medium text-white/90 hover:text-indigo-300 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Skills
               </a>
               <a 
                 href="#projects" 
-                className="text-lg font-medium text-white/90 hover:text-cyan-300 transition-colors duration-300"
+                className="text-lg font-medium text-white/90 hover:text-blue-300 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Projects
               </a>
               <a 
                 href="#contact" 
-                className="text-lg font-medium text-white/90 hover:text-purple-300 transition-colors duration-300"
+                className="text-lg font-medium text-white/90 hover:text-indigo-300 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact

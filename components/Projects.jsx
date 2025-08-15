@@ -18,7 +18,7 @@ function ProjectCard({ title, description, technologies, index }) {
         {technologies.map((tech, techIndex) => (
           <span 
             key={techIndex} 
-            className="text-sm font-medium text-cyan-300"
+            className="text-sm font-medium text-blue-300"
           >
             {tech}{techIndex < technologies.length - 1 ? ' • ' : ''}
           </span>
@@ -49,7 +49,7 @@ export default function Projects() {
           <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"></div>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Personal projects showcasing innovative solutions and modern technologies.
           </p>
