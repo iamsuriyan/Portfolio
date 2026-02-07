@@ -14,7 +14,7 @@ export default function About() {
 
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="text-white/90">
-                I'm a passionate full stack developer with <strong className="text-blue-300">1+ years of professional experience</strong> in building <strong className="text-indigo-300">scalable, high-performance applications</strong> using modern frameworks and cutting-edge AI integrations.
+                I'm a passionate full stack developer with <strong className="text-blue-300">1+ years of professional experience</strong> in building <strong className="text-indigo-300">scalable, high-performance applications</strong> using modern frameworks and cutting-edge AI Integrations.
               </p>
 
               <p className="text-white/90">
