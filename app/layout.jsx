@@ -1,16 +1,11 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import './globals.css';
 
 export const metadata = {
-  title: "Suriyan Dev",
-  description: "Suriyan's Developer Portfolio - Full Stack Developer specializing in AI & Scalable Applications",
-  keywords: "Full Stack Developer, AI, React, Node.js, Next.js, Portfolio",
-  author: "Suriyan",
+  title: 'Suriyan Dhanapal | Software Engineer',
+  description:
+    'Portfolio of Suriyan Dhanapal, Software Engineer focused on full-stack development, backend systems, and agent-driven automation.',
+  keywords: 'Software Engineer, Full Stack Developer, Node.js, Next.js, React Native, AI Agents, Portfolio',
+  author: 'Suriyan Dhanapal',
 };
 
 export const viewport = {
@@ -20,10 +15,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="antialiased">
-        {children}
-      </body>
+    <html lang="en">
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

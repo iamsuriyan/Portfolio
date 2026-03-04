@@ -1,87 +1,27 @@
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 export default function Contact() {
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">
-            Let's Work Together
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Ready to bring your next project to life? Let's discuss how we can create something amazing together.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">Contact</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <a 
-                href="mailto:suriyandhanapal@gmail.com"
-                className="group flex items-center space-x-4 p-4 transition-all duration-300"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FiMail size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-blue-300">suriyandhanapal@gmail.com</p>
-                </div>
-              </a>
-
-              <a 
-                href="tel:+918110044608"
-                className="group flex items-center space-x-4 p-4 transition-all duration-300"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-600 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FiPhone size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Phone</h3>
-                  <p className="text-indigo-300">+91 81100 44608</p>
-                </div>
-              </a>
-
-              <div className="group flex items-center space-x-4 p-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg flex items-center justify-center">
-                  <FiMapPin size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Location</h3>
-                  <p className="text-blue-300">Coimbatore, Tamil Nadu</p>
-                </div>
-              </div>
-            </div>
-
-
+        <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+          <a href="mailto:suriyandhanapal@gmail.com" className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90 hover:border-blue-300/40 transition-colors">
+            <div className="flex items-center gap-3"><FiMail className="text-blue-300" /><span>suriyandhanapal@gmail.com</span></div>
+          </a>
+          <a href="tel:+918110044608" className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90 hover:border-blue-300/40 transition-colors">
+            <div className="flex items-center gap-3"><FiPhone className="text-blue-300" /><span>+91 81100 44608</span></div>
+          </a>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90">
+            <div className="flex items-center gap-3"><FiMapPin className="text-blue-300" /><span>Coimbatore, India</span></div>
           </div>
-
-          {/* CTA Section */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-white">
-              Ready to Start?
-            </h3>
-            <p className="text-white/90 leading-relaxed">
-              Whether you have a project in mind or just want to say hello, I'd love to hear from you. Let's create something extraordinary together.
-            </p>
-            <div className="space-y-4">
-              <a
-                href="mailto:suriyandhanapal@gmail.com"
-                className="group w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-600 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Send Message</span>
-                <FiMail className="group-hover:translate-x-1 transition-transform duration-300" size={18} />
-              </a>
-              <a
-                href="/Suriyan-SD.pdf"
-                download="Suriyan-SD.pdf"
-                className="group w-full border-2 border-white/30 text-white py-4 px-6 rounded-lg font-semibold hover:border-blue-300 hover:text-blue-300 hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
-              >
-                <span>Download Resume</span>
-              </a>
-            </div>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90 flex items-center justify-center gap-4">
+            <a href="https://www.linkedin.com/in/suriyan-d-74514223a" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300"><FiLinkedin size={20} /></a>
+            <a href="https://github.com/iamsuriyan" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300"><FiGithub size={20} /></a>
           </div>
         </div>
       </div>
