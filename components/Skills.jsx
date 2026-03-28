@@ -1,96 +1,98 @@
-function SkillItem({ name, icon }) {
-  return (
-    <div className="group flex flex-col items-center p-3 hover:scale-110 transition-all duration-300 cursor-pointer">
-      <div className="w-12 h-12 mb-2 flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300">
-        <img 
-          src={icon} 
-          alt={name}
-          className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
-        />
-      </div>
-      <span className="text-white/80 font-medium text-center text-xs group-hover:text-blue-300 transition-colors duration-300">
-        {name}
-      </span>
-    </div>
-  );
-}
+'use client';
+
+import ScrollReveal from './ScrollReveal';
+
+const stack = [
+  {
+    category: 'AI & Automation',
+    tools: [
+      { name: 'AI Agent Orchestration', detail: 'Multi-agent systems' },
+      { name: 'Prompt Engineering', detail: 'LLM optimization' },
+      { name: 'Python', detail: 'AI/ML development' },
+      { name: 'FastAPI', detail: 'High-performance APIs' },
+    ],
+  },
+  {
+    category: 'Frontend',
+    tools: [
+      { name: 'React', detail: 'Web applications' },
+      { name: 'React Native', detail: 'Cross-platform mobile' },
+      { name: 'Next.js', detail: 'Full-stack framework' },
+      { name: 'TypeScript', detail: 'Type-safe development' },
+      { name: 'Tailwind CSS', detail: 'Utility-first styling' },
+    ],
+  },
+  {
+    category: 'Backend & Cloud',
+    tools: [
+      { name: 'Node.js', detail: 'Server runtime' },
+      { name: 'Express', detail: 'Web framework' },
+      { name: 'MongoDB', detail: 'NoSQL database' },
+      { name: 'Firebase', detail: 'Backend services' },
+      { name: 'Google Cloud', detail: 'Cloud infrastructure' },
+    ],
+  },
+  {
+    category: 'Tools & Workflow',
+    tools: [
+      { name: 'Git', detail: 'Version control' },
+      { name: 'VS Code', detail: 'Primary editor' },
+      { name: 'Cursor', detail: 'AI-powered editor' },
+      { name: 'Postman', detail: 'API testing' },
+    ],
+  },
+];
 
 export default function Skills() {
-  const programmingSkills = [
-    { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-    { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-    { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'Tailwind CSS', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'React Native', icon: 'https://img.icons8.com/color/48/react-native.png' },
-    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-    { name: 'Redux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-    { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-    { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Google Cloud Platform', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
-    { name: 'AI Agent Integration', icon: 'https://img.icons8.com/color/48/artificial-intelligence.png' },
-    { name: 'API Development', icon: 'https://img.icons8.com/color/48/api-settings.png' },
-    { name: 'Prompt Engineering', icon: 'https://img.icons8.com/color/48/chatgpt.png' },
-  ];
-
-  const tools = [
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-    { name: 'Cursor', icon: 'https://img.icons8.com/fluency/48/code.png' },
-    { name: 'Postman', icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
-    { name: 'MongoDB Compass', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'NPM', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
-    { name: 'PIP', icon: 'https://img.icons8.com/color/48/python--v1.png' },
-  ];
-
   return (
-    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">
-            Skills & Expertise
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Technologies and tools I use to bring ideas to life and deliver exceptional digital experiences.
-          </p>
-        </div>
-
-        {/* Programming Technologies */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Programming Technologies
-          </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4">
-            {programmingSkills.map((skill, index) => (
-              <SkillItem
-                key={skill.name}
-                name={skill.name}
-                icon={skill.icon}
-              />
-            ))}
+    <section id="stack" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+      <div className="max-w-7xl mx-auto">
+        <ScrollReveal>
+          <div className="flex items-center gap-4 mb-16">
+            <span className="section-label">06</span>
+            <span className="section-label">//Stack & Tools</span>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Development Tools */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Development Tools
-          </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-4 max-w-3xl mx-auto">
-            {tools.map((tool, index) => (
-              <SkillItem
-                key={tool.name}
-                name={tool.name}
-                icon={tool.icon}
-              />
-            ))}
+        <ScrollReveal delay={0.1}>
+          <div className="mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              Stack & Tools
+            </h2>
+            <p className="text-white/40 max-w-xl mt-4 text-lg leading-relaxed">
+              I pick the right tool for the job — not the trendiest one. Here's what I work with daily.
+            </p>
           </div>
+        </ScrollReveal>
+
+        <div className="space-y-14">
+          {stack.map((category, catIndex) => (
+            <ScrollReveal key={category.category} delay={0.05 + catIndex * 0.08}>
+              <div>
+                <h3 className="text-sm font-semibold text-white/25 uppercase tracking-wider mb-6">
+                  {category.category}
+                </h3>
+                <div className="space-y-0">
+                  {category.tools.map((tool, index) => (
+                    <div
+                      key={tool.name}
+                      className="group flex items-center justify-between py-4 border-b border-[#1a1a1a] hover:border-accent/30 hover:px-3 transition-all duration-300 cursor-default"
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs text-white/15 w-6 font-mono">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="text-lg font-medium text-white/70 group-hover:text-accent transition-colors duration-300">
+                          {tool.name}
+                        </span>
+                      </div>
+                      <span className="text-sm text-white/20 group-hover:text-white/40 transition-colors duration-300">{tool.detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

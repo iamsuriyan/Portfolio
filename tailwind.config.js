@@ -5,27 +5,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      animation: {
-        'fade-in-up': 'fadeInUp 0.6s ease-out',
-        'bounce-slow': 'bounce 3s infinite',
-      },
-      keyframes: {
-        fadeInUp: {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(30px)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)',
-          },
-        },
+      colors: {
+        accent: '#6366f1',
+        dark: '#e5e5e5',
+        muted: '#999999',
+        subtle: '#666666',
+        surface: '#111111',
+        border: '#222222',
       },
     },
   },

@@ -7,9 +7,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Suriyan Dev",
-  description: "Suriyan's Developer Portfolio - Full Stack Developer specializing in AI & Scalable Applications",
-  keywords: "Full Stack Developer, AI, React, Node.js, Next.js, Portfolio",
+  title: "Suriyan — AI & Full-Stack Development",
+  description: "I build AI-powered applications, multi-agent orchestration systems, workflow automation, and full-stack solutions for businesses.",
+  keywords: "AI development, AI agents, workflow automation, full-stack development, multi-agent orchestration",
   author: "Suriyan",
 };
 

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #111111;
+  --color-text: #e5e5e5;
+  --color-text-muted: #666666;
+  --color-accent: #6366f1;
+  --color-border: #222222;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,97 +20,102 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
 
-::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-gray-500;
-}
-
-/* Animation classes */
+/* Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Natural twinkling animation for stars */
-@keyframes star-twinkle {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  75% {
-    transform: scale(1.05);
-  }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-subtle-blink {
-  animation: star-twinkle 4s ease-in-out infinite;
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+  50% { box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.15); }
 }
 
-/* Radial Gradient Utility */
-.bg-gradient-radial {
-  background: radial-gradient(circle, var(--tw-gradient-stops));
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* Mobile Navigation Animations */
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-slide-in-top {
-  animation: slideInFromTop 0.5s ease-out;
+/* Utility classes */
+.section-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
 }
 
-.animate-fade-in-scale {
-  animation: fadeInScale 0.4s ease-out;
+.display-text {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
 
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
 
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #818cf8, #a78bfa, #6366f1);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
 
+.shimmer-line {
+  background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.15) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.1);
+}
+
+/* Availability dot pulse */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+.dot-pulse {
+  animation: dot-pulse 2s ease-in-out infinite;
+}

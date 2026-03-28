@@ -1,89 +1,69 @@
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin } from 'react-icons/fi';
+'use client';
+
+import { FiArrowUpRight, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl sm:text-6xl font-black text-white mb-6">
-            Let's Work Together
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Ready to bring your next project to life? Let's discuss how we can create something amazing together.
+    <section id="contact" className="px-6 sm:px-8 lg:px-12 py-32 border-t border-[#222] relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.06), transparent 50%)',
+      }} />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium text-accent tracking-wider uppercase mb-8">Ready to start?</p>
+            <h2 className="display-text text-white mb-6">
+              LET'S WORK<br />
+              <span className="gradient-text">TOGETHER</span>
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <p className="text-xl text-white/40 max-w-2xl mx-auto mb-16 leading-relaxed text-center">
+            Whether it's an AI system that needs orchestrating, a product that needs building, or a workflow that needs automating — let's talk. First conversation is always free. No pitch, no pressure — just figuring out if I can help.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <a 
-                href="mailto:suriyandhanapal@gmail.com"
-                className="group flex items-center space-x-4 p-4 transition-all duration-300"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FiMail size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-blue-300">suriyandhanapal@gmail.com</p>
-                </div>
-              </a>
+        <ScrollReveal delay={0.3} scale>
+          <div className="flex justify-center mb-20">
+            <a
+              href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-base font-bold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 transition-all duration-300"
+            >
+              START A PROJECT
+              <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+          </div>
+        </ScrollReveal>
 
-              <a 
-                href="tel:+918110044608"
-                className="group flex items-center space-x-4 p-4 transition-all duration-300"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-600 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FiPhone size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Phone</h3>
-                  <p className="text-indigo-300">+91 81100 44608</p>
-                </div>
-              </a>
-
-              <div className="group flex items-center space-x-4 p-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg flex items-center justify-center">
-                  <FiMapPin size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Location</h3>
-                  <p className="text-blue-300">Coimbatore, Tamil Nadu</p>
-                </div>
+        <ScrollReveal delay={0.4}>
+          <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <a href="mailto:suriyandhanapal@gmail.com" className="group text-center">
+              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
+                <FiMail size={16} />
               </div>
-            </div>
-
-
-          </div>
-
-          {/* CTA Section */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-white">
-              Ready to Start?
-            </h3>
-            <p className="text-white/90 leading-relaxed">
-              Whether you have a project in mind or just want to say hello, I'd love to hear from you. Let's create something extraordinary together.
-            </p>
-            <div className="space-y-4">
-              <a
-                href="mailto:suriyandhanapal@gmail.com"
-                className="group w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-600 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Send Message</span>
-                <FiMail className="group-hover:translate-x-1 transition-transform duration-300" size={18} />
-              </a>
-              <a
-                href="/Suriyan-SD.pdf"
-                download="Suriyan-SD.pdf"
-                className="group w-full border-2 border-white/30 text-white py-4 px-6 rounded-lg font-semibold hover:border-blue-300 hover:text-blue-300 hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
-              >
-                <span>Download Resume</span>
-              </a>
+              <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">suriyandhanapal@gmail.com</p>
+            </a>
+            <a href="tel:+918110044608" className="group text-center">
+              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
+                <FiPhone size={16} />
+              </div>
+              <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">+91 81100 44608</p>
+            </a>
+            <div className="text-center">
+              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40">
+                <FiMapPin size={16} />
+              </div>
+              <p className="text-sm text-white/30">Coimbatore, Tamil Nadu</p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
