@@ -33,7 +33,7 @@ export default function Home() {
             'FIREBASE',
             'GOOGLE CLOUD',
           ]}
-          speed={40}
+          speed={80}
           className="text-sm font-medium text-white/15 tracking-widest"
         />
       </div>
