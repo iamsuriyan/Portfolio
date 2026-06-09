@@ -34,7 +34,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center py-5">
           <a href="#" className="text-sm font-medium tracking-wide text-white/60">
-            &copy;2025 SURIYAN DHANAPAL
+            &copy;2026 SURIYAN DHANAPAL
           </a>
 
           <div className="hidden md:flex items-center gap-8">
