@@ -17,7 +17,7 @@ export default function Hero() {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
                 <span className="text-sm font-medium text-green-400/80 tracking-wide">
-                  Available for new projects
+                  Open to new opportunities & collaborations
                 </span>
               </div>
             </ScrollReveal>
@@ -25,10 +25,10 @@ export default function Hero() {
             <ScrollReveal delay={0.15}>
               <div className="space-y-3">
                 <p className="text-sm font-medium text-white/40 tracking-wide uppercase">
-                  Based in Coimbatore, TAMIL NADU
+                  Software Engineer · Based in Coimbatore, INDIA
                 </p>
                 <p className="text-sm font-medium text-white/40 tracking-wide">
-                  Available <span className="text-white/80 font-semibold">ALL AROUND</span> worldwide
+                  <span className="text-white/80 font-semibold">1.5+ years</span> shipping production AI products
                 </p>
               </div>
             </ScrollReveal>
@@ -43,7 +43,7 @@ export default function Hero() {
 
             <ScrollReveal delay={0.45}>
               <p className="text-lg text-white/50 max-w-lg leading-relaxed">
-                Multi-agent AI orchestration, workflow automation, full-stack applications — I take complex problems and turn them into production-ready systems. You bring the vision, I build the machine.
+                Software Engineer building production AI products at Mindgryd — Areev, Atmatic and Axtion. Full-stack development, backend system design, OAuth identity and agentic automation, owned end to end.
               </p>
             </ScrollReveal>
 
@@ -55,7 +55,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 bg-accent text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 transition-all duration-300 pulse-glow"
                 >
-                  START A PROJECT
+                  GET IN TOUCH
                   <FiArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
                 <a

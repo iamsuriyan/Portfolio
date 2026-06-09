@@ -7,10 +7,10 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Suriyan — AI & Full-Stack Development",
-  description: "I build AI-powered applications, multi-agent orchestration systems, workflow automation, and full-stack solutions for businesses.",
-  keywords: "AI development, AI agents, workflow automation, full-stack development, multi-agent orchestration",
-  author: "Suriyan",
+  title: "Suriyan Dhanapal — Software Engineer | AI & Full-Stack",
+  description: "Software Engineer building production AI products — Areev, Atmatic and Axtion at Mindgryd. Full-stack development, backend system design, OAuth identity, and agentic automation.",
+  keywords: "software engineer, AI agents, workflow automation, full-stack development, OAuth, RAG, Next.js, Node.js",
+  author: "Suriyan Dhanapal",
 };
 
 export const viewport = {

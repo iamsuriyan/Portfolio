@@ -5,6 +5,7 @@ import Approach from '../components/Approach';
 import Services from '../components/Services';
 import CaseStudies from '../components/CaseStudies';
 import About from '../components/About';
+import Experience from '../components/Experience';
 import WhatYouGet from '../components/WhatYouGet';
 import Skills from '../components/Skills';
 import Stats from '../components/Stats';
@@ -19,19 +20,21 @@ export default function Home() {
       <div className="border-t border-[#222] py-6 bg-[#0a0a0a]">
         <Marquee
           items={[
-            'AI AGENT ORCHESTRATION',
-            'MULTI-AGENT SYSTEMS',
+            'AI AGENTS',
             'WORKFLOW AUTOMATION',
+            'OAUTH 2.0',
+            'RAG / RETRIEVAL',
             'REACT / NEXT.JS',
             'REACT NATIVE',
             'NODE.JS',
+            'TYPESCRIPT',
             'PYTHON',
             'FASTAPI',
-            'LLM INTEGRATION',
-            'PROMPT ENGINEERING',
             'MONGODB',
-            'FIREBASE',
-            'GOOGLE CLOUD',
+            'POSTGRESQL',
+            'DOCKER',
+            'GITHUB ACTIONS',
+            'GCP',
           ]}
           speed={80}
           className="text-sm font-medium text-white/15 tracking-widest"
@@ -41,6 +44,7 @@ export default function Home() {
       <Services />
       <CaseStudies />
       <About />
+      <Experience />
       <WhatYouGet />
       <Skills />
       <Stats />

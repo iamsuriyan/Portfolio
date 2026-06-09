@@ -11,7 +11,7 @@ export default function Footer() {
             </span>
             <span className="hidden sm:block text-white/10">|</span>
             <span className="text-sm text-white/15">
-              AI & Full-Stack Development Services
+              Software Engineer · AI & Full-Stack
             </span>
           </div>
 

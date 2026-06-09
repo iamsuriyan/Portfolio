@@ -4,30 +4,30 @@ import ScrollReveal from './ScrollReveal';
 
 const projects = [
   {
-    tag: 'Agriculture Tech / AI',
-    title: 'Farm2Com',
-    subtitle: 'AI-Powered Agriculture Platform',
-    problem: 'Farmers had no fast way to identify crop diseases in the field — they relied on manual inspection and delayed expert consultations, losing critical time and yield.',
-    solution: 'Built a full-featured React Native app with AI-powered plant disease detection (snap a photo, get instant diagnosis), community forums for farmer collaboration, expert consultant chat, news aggregation, and complete crop management tools.',
+    tag: 'Document AI · IIT Bombay-incubated',
+    title: 'Cooper Compass',
+    subtitle: 'Agentic Document & Email Intelligence',
+    problem: 'Logistics teams spent 2+ hours manually extracting job and BL numbers from unstructured shipping emails — slow, error-prone, and impossible to scale.',
+    solution: 'Built an agentic email-intelligence platform under IIT Bombay incubation: real-time Gmail/Outlook ingestion (OAuth 2.0 with Gmail Pub/Sub and Microsoft Graph push) with live SSE dashboards, an OCR pipeline (Google Vision + Tesseract fallback) and OpenAI classification, auto-grouping every email and document by shipment.',
     impact: [
-      'Disease identification went from days to seconds',
-      'AI model accuracy high enough for real-field use',
-      'Full community + consultation ecosystem in one app',
+      'Cut manual entry from 2 hours to 8 minutes',
+      'Adopted across 20+ pilot users',
+      '2–5s end-to-end extraction latency',
     ],
-    tech: ['React Native', 'AI/ML', 'Node.js', 'MongoDB'],
+    tech: ['Node.js', 'TypeScript', 'OpenAI', 'PostgreSQL'],
   },
   {
-    tag: 'Social Media / Blockchain',
-    title: 'Echoes',
-    subtitle: 'Privacy-First Social Platform',
-    problem: 'Existing social platforms leak user data by design. Users wanted a platform where privacy wasn\'t a settings toggle — it was the architecture.',
-    solution: 'Architected a blockchain-based social media app with end-to-end encryption baked into every layer. Zero-knowledge data architecture, full feature parity with mainstream apps — posts, messaging, media sharing — but with complete user data ownership.',
+    tag: 'Agriculture Tech / AI',
+    title: 'Farm2Com',
+    subtitle: 'Expo React Native Agriculture App',
+    problem: 'Farmers had no fast way to identify crop diseases in the field and lacked a single place to get expert help, news and crop guidance.',
+    solution: 'Developed an agriculture-focused mobile app with community posts, consultant chat, agricultural news, crop management and user profiles — and integrated AI-based disease prediction and plant recommendations to support real-time decision-making.',
     impact: [
-      'Zero data leaks — verified by architecture, not policy',
-      'Blockchain-verified data integrity at every level',
-      'Users own 100% of their data',
+      'AI disease prediction from a single photo',
+      'Community + consultant chat in one app',
+      'Crop management and news in a unified experience',
     ],
-    tech: ['React Native', 'Blockchain', 'Node.js', 'TypeScript'],
+    tech: ['React Native', 'Node.js', 'MongoDB', 'AI/ML'],
   },
 ];
 

@@ -4,10 +4,10 @@ import ScrollReveal from './ScrollReveal';
 import Counter from './Counter';
 
 const stats = [
-  { end: 10, suffix: '+', label: 'Projects Shipped' },
-  { end: 5, suffix: '+', label: 'AI Systems Built' },
-  { end: 100, suffix: '%', label: 'Client Retention' },
-  { end: 24, suffix: '/7', label: 'Availability' },
+  { end: 5, suffix: '+', label: 'Products Built' },
+  { end: 3000, suffix: '+', label: 'Connectors Shipped' },
+  { end: 8, suffix: '', label: 'Knowledge Connectors' },
+  { end: 2, suffix: '+ yrs', label: 'Experience' },
 ];
 
 export default function Stats() {
@@ -16,7 +16,7 @@ export default function Stats() {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
-            <span className="section-label">07</span>
+            <span className="section-label">08</span>
             <span className="section-label">//Numbers</span>
           </div>
         </ScrollReveal>

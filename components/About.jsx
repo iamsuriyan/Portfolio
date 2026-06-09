@@ -17,10 +17,10 @@ export default function About() {
           <ScrollReveal delay={0.1} direction="right">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15]">
               I'M A{' '}
-              <span className="gradient-text">FULL STACK DEVELOPER</span>{' '}
-              WHO SPECIALIZES IN{' '}
-              <span className="gradient-text">AI AGENT ORCHESTRATION</span>{' '}
-              AND BUILDING SYSTEMS THAT{' '}
+              <span className="gradient-text">SOFTWARE ENGINEER</span>{' '}
+              WHO BUILDS{' '}
+              <span className="gradient-text">PRODUCTION AI SYSTEMS</span>{' '}
+              AND SHIPS PRODUCTS THAT{' '}
               <span className="gradient-text">ACTUALLY WORK</span>.
             </h2>
           </ScrollReveal>
@@ -28,12 +28,12 @@ export default function About() {
           <div className="space-y-6">
             <ScrollReveal delay={0.2}>
               <p className="text-white/50 text-lg leading-relaxed">
-                I've built multi-agent orchestration systems where AI agents collaborate to solve problems no single model can handle. I've built workflow automation engines that replaced entire manual processes. I've shipped full-stack applications — web and mobile — that real users depend on daily.
+                At Mindgryd I build three live products — Areev, an AI memory and context platform; Atmatic, an agent-autonomy platform; and Axtion, an automation platform with 3,000+ connectors. I've designed OAuth identity systems, multi-connector knowledge subsystems, and retrieval engines that real autonomous agents rely on.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-white/50 text-lg leading-relaxed">
-                My focus is AI-first development — not slapping a ChatGPT wrapper on things, but deeply integrating intelligence into products where it creates real, measurable value. From React Native mobile apps to FastAPI backends to complex LLM integrations, I handle the entire stack.
+                My focus is AI-first engineering — not slapping a ChatGPT wrapper on things, but deeply integrating intelligence where it creates real, measurable value. From React Native apps and Node/FastAPI backends to RAG retrieval and HMAC-signed webhook systems, I own features end to end across backend and frontend.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.4}>
@@ -49,7 +49,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 bg-accent text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 transition-all duration-300"
                 >
-                  WORK WITH ME
+                  GET IN TOUCH
                 </a>
                 <a
                   href="#stack"

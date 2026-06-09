@@ -14,7 +14,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-sm font-medium text-accent tracking-wider uppercase mb-8">Ready to start?</p>
+            <p className="text-sm font-medium text-accent tracking-wider uppercase mb-8">Let's connect</p>
             <h2 className="display-text text-white mb-6">
               LET'S WORK<br />
               <span className="gradient-text">TOGETHER</span>
@@ -24,7 +24,7 @@ export default function Contact() {
 
         <ScrollReveal delay={0.15}>
           <p className="text-xl text-white/40 max-w-2xl mx-auto mb-16 leading-relaxed text-center">
-            Whether it's an AI system that needs orchestrating, a product that needs building, or a workflow that needs automating — let's talk. First conversation is always free. No pitch, no pressure — just figuring out if I can help.
+            Open to interesting roles, collaborations, and hard problems worth solving — whether it's an AI system that needs architecting, a product that needs building, or a workflow that needs automating. Reach out and let's talk.
           </p>
         </ScrollReveal>
 
@@ -36,7 +36,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-base font-bold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 transition-all duration-300"
             >
-              START A PROJECT
+              GET IN TOUCH
               <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </a>
           </div>

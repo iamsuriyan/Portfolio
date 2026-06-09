@@ -42,7 +42,7 @@ export default function WhatYouGet() {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
-            <span className="section-label">05</span>
+            <span className="section-label">06</span>
             <span className="section-label">//Working With Me</span>
           </div>
         </ScrollReveal>

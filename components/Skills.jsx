@@ -4,41 +4,54 @@ import ScrollReveal from './ScrollReveal';
 
 const stack = [
   {
-    category: 'AI & Automation',
+    category: 'Languages',
     tools: [
-      { name: 'AI Agent Orchestration', detail: 'Multi-agent systems' },
-      { name: 'Prompt Engineering', detail: 'LLM optimization' },
-      { name: 'Python', detail: 'AI/ML development' },
+      { name: 'JavaScript', detail: 'Core language' },
+      { name: 'TypeScript', detail: 'Type-safe development' },
+      { name: 'Python', detail: 'AI / backend services' },
+    ],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    tools: [
+      { name: 'Next.js', detail: 'Full-stack framework' },
+      { name: 'React', detail: 'Web applications' },
+      { name: 'React Native (Expo)', detail: 'Cross-platform mobile' },
+      { name: 'Node.js / Express', detail: 'Backend runtime & APIs' },
       { name: 'FastAPI', detail: 'High-performance APIs' },
     ],
   },
   {
-    category: 'Frontend',
+    category: 'Backend & Databases',
     tools: [
-      { name: 'React', detail: 'Web applications' },
-      { name: 'React Native', detail: 'Cross-platform mobile' },
-      { name: 'Next.js', detail: 'Full-stack framework' },
-      { name: 'TypeScript', detail: 'Type-safe development' },
-      { name: 'Tailwind CSS', detail: 'Utility-first styling' },
-    ],
-  },
-  {
-    category: 'Backend & Cloud',
-    tools: [
-      { name: 'Node.js', detail: 'Server runtime' },
-      { name: 'Express', detail: 'Web framework' },
+      { name: 'REST API Design', detail: 'Service interfaces' },
+      { name: 'Microservices', detail: 'Distributed architecture' },
       { name: 'MongoDB', detail: 'NoSQL database' },
-      { name: 'Firebase', detail: 'Backend services' },
-      { name: 'Google Cloud', detail: 'Cloud infrastructure' },
+      { name: 'PostgreSQL', detail: 'Relational database' },
+      { name: 'OAuth 2.0 & Auth', detail: 'Identity & access control' },
+      { name: 'Data Modeling', detail: 'Schema design' },
     ],
   },
   {
-    category: 'Tools & Workflow',
+    category: 'AI & Automation',
+    tools: [
+      { name: 'AI Agents', detail: 'Autonomous systems' },
+      { name: 'RAG / Retrieval', detail: 'Context & memory' },
+      { name: 'OCR', detail: 'Document extraction' },
+      { name: 'Workflow Automation', detail: 'Connector pipelines' },
+      { name: 'Prompt Engineering', detail: 'LLM optimization' },
+      { name: 'Browser Automation', detail: 'Headless agents' },
+    ],
+  },
+  {
+    category: 'Tools & Platforms',
     tools: [
       { name: 'Git', detail: 'Version control' },
-      { name: 'VS Code', detail: 'Primary editor' },
-      { name: 'Cursor', detail: 'AI-powered editor' },
+      { name: 'GCP', detail: 'Cloud infrastructure' },
+      { name: 'Docker', detail: 'Containerization' },
+      { name: 'GitHub Actions', detail: 'CI/CD pipelines' },
       { name: 'Postman', detail: 'API testing' },
+      { name: 'Claude Code', detail: 'AI-assisted development' },
     ],
   },
 ];
@@ -49,7 +62,7 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
-            <span className="section-label">06</span>
+            <span className="section-label">07</span>
             <span className="section-label">//Stack & Tools</span>
           </div>
         </ScrollReveal>

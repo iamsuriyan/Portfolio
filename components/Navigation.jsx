@@ -8,6 +8,7 @@ const navItems = [
   { href: '#services', label: 'Services' },
   { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -33,7 +34,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center py-5">
           <a href="#" className="text-sm font-medium tracking-wide text-white/60">
-            &copy;2025 SURIYAN
+            &copy;2025 SURIYAN DHANAPAL
           </a>
 
           <div className="hidden md:flex items-center gap-8">
