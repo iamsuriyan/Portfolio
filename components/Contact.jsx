@@ -1,6 +1,6 @@
 'use client';
 
-import { FiArrowUpRight, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiArrowUpRight, FiMail, FiPhone, FiMapPin, FiDownload } from 'react-icons/fi';
 import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
@@ -29,7 +29,7 @@ export default function Contact() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3} scale>
-          <div className="flex justify-center mb-20">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
             <a
               href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
               target="_blank"
@@ -38,6 +38,16 @@ export default function Contact() {
             >
               GET IN TOUCH
               <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </a>
+            <a
+              href="./Suriyan-SD.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="group inline-flex items-center gap-3 border border-[#333] text-white/70 px-10 py-5 rounded-full text-base font-semibold hover:text-white hover:border-accent/40 hover:bg-white/5 transition-all duration-300"
+            >
+              DOWNLOAD RÉSUMÉ
+              <FiDownload size={17} className="group-hover:translate-y-0.5 transition-transform duration-300" />
             </a>
           </div>
         </ScrollReveal>
