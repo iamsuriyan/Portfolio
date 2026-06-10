@@ -1,6 +1,7 @@
 'use client';
 
 import ScrollReveal from './ScrollReveal';
+import SpotlightCard from './SpotlightCard';
 
 const roles = [
   {
@@ -38,7 +39,7 @@ const education = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+    <section id="experience" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-line">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
@@ -60,19 +61,16 @@ export default function Experience() {
 
         <div className="relative">
           {/* Timeline rail */}
-          <div className="absolute left-0 top-2 bottom-0 w-px bg-[#222] hidden sm:block" />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-line hidden sm:block" />
 
           <div className="space-y-12">
             {roles.map((role, index) => (
               <ScrollReveal key={role.company} delay={0.1 + index * 0.12}>
                 <div className="relative sm:pl-10">
                   {/* Node */}
-                  <span className="absolute left-[-4px] top-2 hidden sm:block w-2.5 h-2.5 rounded-full bg-accent ring-4 ring-[#0a0a0a]" />
+                  <span className="absolute left-[-4px] top-2 hidden sm:block w-2.5 h-2.5 rounded-full bg-accent ring-4 ring-base" />
 
-                  <div className="group card-hover border border-[#222] rounded-2xl p-8 md:p-10 hover:border-accent/30 relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: 'radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.04), transparent 50%)' }}
-                    />
+                  <SpotlightCard tilt={false} className="card-hover border border-line rounded-2xl p-8 md:p-10 hover:border-accent/30">
                     <div className="relative z-10">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
                         <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-accent transition-colors duration-300">
@@ -96,13 +94,13 @@ export default function Experience() {
 
                       <div className="flex flex-wrap gap-2">
                         {role.tech.map((t) => (
-                          <span key={t} className="text-xs font-medium text-white/40 bg-[#111] border border-[#222] px-3 py-1.5 rounded-full">
+                          <span key={t} className="text-xs font-medium text-white/40 bg-surface border border-line px-3 py-1.5 rounded-full">
                             {t}
                           </span>
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </SpotlightCard>
                 </div>
               </ScrollReveal>
             ))}
@@ -110,8 +108,8 @@ export default function Experience() {
             {/* Education */}
             <ScrollReveal delay={0.1 + roles.length * 0.12}>
               <div className="relative sm:pl-10">
-                <span className="absolute left-[-3px] top-2 hidden sm:block w-2 h-2 rounded-full bg-white/20 ring-4 ring-[#0a0a0a]" />
-                <div className="border border-[#1a1a1a] rounded-2xl p-7 md:p-8">
+                <span className="absolute left-[-3px] top-2 hidden sm:block w-2 h-2 rounded-full bg-white/20 ring-4 ring-base" />
+                <div className="border border-line-soft rounded-2xl p-7 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                     <div>
                       <span className="inline-block text-xs font-medium text-white/30 uppercase tracking-wider mb-2">

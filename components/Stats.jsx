@@ -12,7 +12,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="px-6 sm:px-8 lg:px-12 py-28 bg-[#111]">
+    <section className="px-6 sm:px-8 lg:px-12 py-28 bg-surface">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">

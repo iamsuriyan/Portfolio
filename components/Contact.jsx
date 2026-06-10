@@ -2,10 +2,12 @@
 
 import { FiArrowUpRight, FiMail, FiPhone, FiMapPin, FiDownload } from 'react-icons/fi';
 import ScrollReveal from './ScrollReveal';
+import AnimatedText from './AnimatedText';
+import Magnetic from './Magnetic';
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 sm:px-8 lg:px-12 py-32 border-t border-[#222] relative overflow-hidden">
+    <section id="contact" className="px-6 sm:px-8 lg:px-12 py-32 border-t border-line relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.06), transparent 50%)',
@@ -16,8 +18,12 @@ export default function Contact() {
           <div className="text-center mb-16">
             <p className="text-sm font-medium text-accent tracking-wider uppercase mb-8">Let's connect</p>
             <h2 className="display-text text-white mb-6">
-              LET'S WORK<br />
-              <span className="gradient-text">TOGETHER</span>
+              <AnimatedText as="span" className="block" stagger={0.1}>
+                LET'S WORK
+              </AnimatedText>
+              <AnimatedText as="span" className="block" delay={0.2}>
+                <span className="gradient-text">TOGETHER</span>
+              </AnimatedText>
             </h2>
           </div>
         </ScrollReveal>
@@ -30,44 +36,48 @@ export default function Contact() {
 
         <ScrollReveal delay={0.3} scale>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <a
-              href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-base font-bold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 hover:scale-105 transition-all duration-300"
-            >
-              GET IN TOUCH
-              <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </a>
-            <a
-              href="./Suriyan-SD.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className="group inline-flex items-center gap-3 border border-[#333] text-white/70 px-10 py-5 rounded-full text-base font-semibold hover:text-white hover:border-accent/40 hover:bg-white/5 transition-all duration-300"
-            >
-              DOWNLOAD RÉSUMÉ
-              <FiDownload size={17} className="group-hover:translate-y-0.5 transition-transform duration-300" />
-            </a>
+            <Magnetic>
+              <a
+                href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-base font-bold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300"
+              >
+                GET IN TOUCH
+                <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.25}>
+              <a
+                href="./Suriyan-SD.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="group inline-flex items-center gap-3 border border-line-strong text-white/70 px-10 py-5 rounded-full text-base font-semibold hover:text-white hover:border-accent/40 hover:bg-white/5 transition-all duration-300"
+              >
+                DOWNLOAD RÉSUMÉ
+                <FiDownload size={17} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+              </a>
+            </Magnetic>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>
           <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <a href="mailto:suriyandhanapal@gmail.com" className="group text-center">
-              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
+              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
                 <FiMail size={16} />
               </div>
               <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">suriyandhanapal@gmail.com</p>
             </a>
             <a href="tel:+918110044608" className="group text-center">
-              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
+              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
                 <FiPhone size={16} />
               </div>
               <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">+91 81100 44608</p>
             </a>
             <div className="text-center">
-              <div className="w-10 h-10 rounded-full bg-[#111] border border-[#222] flex items-center justify-center mx-auto mb-3 text-white/40">
+              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40">
                 <FiMapPin size={16} />
               </div>
               <p className="text-sm text-white/30">Coimbatore, Tamil Nadu</p>

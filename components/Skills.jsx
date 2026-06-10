@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'motion/react';
 import ScrollReveal from './ScrollReveal';
 
 const stack = [
@@ -58,7 +59,7 @@ const stack = [
 
 export default function Skills() {
   return (
-    <section id="stack" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+    <section id="stack" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-line">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
@@ -87,9 +88,13 @@ export default function Skills() {
                 </h3>
                 <div className="space-y-0">
                   {category.tools.map((tool, index) => (
-                    <div
+                    <motion.div
                       key={tool.name}
-                      className="group flex items-center justify-between py-4 border-b border-[#1a1a1a] hover:border-accent/30 hover:px-3 transition-all duration-300 cursor-default"
+                      className="group flex items-center justify-between py-4 border-b border-line-soft hover:border-accent/30 hover:px-3 transition-all duration-300 cursor-default"
+                      initial={{ opacity: 0, x: -24 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.6 }}
+                      transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: index * 0.05 }}
                     >
                       <div className="flex items-center gap-4">
                         <span className="text-xs text-white/15 w-6 font-mono">
@@ -100,7 +105,7 @@ export default function Skills() {
                         </span>
                       </div>
                       <span className="text-sm text-white/20 group-hover:text-white/40 transition-colors duration-300">{tool.detail}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>

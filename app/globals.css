@@ -1,32 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --color-bg: #0a0a0a;
-  --color-bg-alt: #111111;
-  --color-text: #e5e5e5;
-  --color-text-muted: #666666;
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Design tokens */
+  --color-base: #0a0a0a;
+  --color-surface: #111111;
+  --color-line: #222222;
+  --color-line-soft: #1a1a1a;
+  --color-line-strong: #333333;
   --color-accent: #6366f1;
-  --color-border: #222222;
+  --color-accent-bright: #818cf8;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchored sections clear of the fixed nav */
+  scroll-padding-top: 5rem;
+}
+
+/* Lenis smooth-scroll hooks */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-base);
+  color: #e5e5e5;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 9999px; }
+::-webkit-scrollbar-track { background: var(--color-base); }
+::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #555; }
 
 /* Animations */
@@ -69,7 +96,7 @@ body {
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: #666666;
 }
 
 .display-text {
@@ -102,6 +129,20 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
+/* Subtle dot grid backdrop */
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Fade marquee content at the edges; pause on hover */
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+.marquee-mask:hover > div {
+  animation-play-state: paused;
+}
+
 /* Card hover lift */
 .card-hover {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
@@ -118,4 +159,18 @@ body {
 }
 .dot-pulse {
   animation: dot-pulse 2s ease-in-out infinite;
+}
+
+/* Respect users who opt out of motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

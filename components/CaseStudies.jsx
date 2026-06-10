@@ -1,6 +1,7 @@
 'use client';
 
 import ScrollReveal from './ScrollReveal';
+import SpotlightCard from './SpotlightCard';
 
 const projects = [
   {
@@ -33,7 +34,7 @@ const projects = [
 
 export default function CaseStudies() {
   return (
-    <section id="work" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+    <section id="work" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-line">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
@@ -56,10 +57,7 @@ export default function CaseStudies() {
         <div className="space-y-8">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={0.1 + index * 0.15} scale>
-              <div className="group card-hover border border-[#222] rounded-2xl p-8 md:p-12 hover:border-accent/30 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.04), transparent 50%)' }}
-                />
+              <SpotlightCard tilt={false} className="card-hover border border-line rounded-2xl p-8 md:p-12 hover:border-accent/30">
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
                     <div>
@@ -73,7 +71,7 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-wrap gap-2 md:max-w-xs md:justify-end">
                       {project.tech.map((t) => (
-                        <span key={t} className="text-xs font-medium text-white/40 bg-[#111] border border-[#222] px-3 py-1.5 rounded-full">
+                        <span key={t} className="text-xs font-medium text-white/40 bg-surface border border-line px-3 py-1.5 rounded-full">
                           {t}
                         </span>
                       ))}
@@ -91,7 +89,7 @@ export default function CaseStudies() {
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-8 border-t border-[#1a1a1a]">
+                  <div className="mt-8 pt-8 border-t border-line-soft">
                     <h4 className="text-xs font-bold text-white/30 uppercase tracking-wider mb-4">Results</h4>
                     <div className="flex flex-col sm:flex-row gap-4">
                       {project.impact.map((item, i) => (
@@ -103,7 +101,7 @@ export default function CaseStudies() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           ))}
         </div>

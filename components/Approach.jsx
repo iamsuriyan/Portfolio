@@ -25,7 +25,7 @@ export default function Approach() {
   ];
 
   return (
-    <section id="approach" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+    <section id="approach" className="px-6 sm:px-8 lg:px-12 py-28 border-t border-line">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
@@ -49,7 +49,7 @@ export default function Approach() {
           {phases.map((phase, index) => (
             <ScrollReveal key={phase.number} delay={0.15 + index * 0.15} scale>
               <div className="group h-full">
-                <div className="border-t-2 border-[#222] group-hover:border-accent transition-all duration-500 pt-8">
+                <div className="border-t-2 border-line group-hover:border-accent transition-all duration-500 pt-8">
                   <span className="text-5xl font-bold text-white/5 group-hover:text-accent/20 transition-all duration-500">
                     {phase.number}
                   </span>

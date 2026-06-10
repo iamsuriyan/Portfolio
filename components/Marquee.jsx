@@ -5,9 +5,9 @@ export default function Marquee({ items, speed = 30, className = '' }) {
   const repeated = `${content}  ·  ${content}  ·  `;
 
   return (
-    <div className={`overflow-hidden whitespace-nowrap ${className}`}>
+    <div className={`overflow-hidden whitespace-nowrap marquee-mask ${className}`}>
       <div
-        className="inline-block animate-marquee"
+        className="inline-block"
         style={{
           animation: `marquee ${speed}s linear infinite`,
         }}

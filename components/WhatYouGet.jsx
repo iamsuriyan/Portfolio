@@ -2,6 +2,7 @@
 
 import { FiCheck, FiClock, FiEye, FiShield, FiRefreshCw, FiMessageCircle } from 'react-icons/fi';
 import ScrollReveal from './ScrollReveal';
+import SpotlightCard from './SpotlightCard';
 
 const benefits = [
   {
@@ -38,7 +39,7 @@ const benefits = [
 
 export default function WhatYouGet() {
   return (
-    <section className="px-6 sm:px-8 lg:px-12 py-28 border-t border-[#222]">
+    <section className="px-6 sm:px-8 lg:px-12 py-28 border-t border-line">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="flex items-center gap-4 mb-16">
@@ -60,11 +61,8 @@ export default function WhatYouGet() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
-            <ScrollReveal key={benefit.title} delay={0.1 + index * 0.08} scale>
-              <div className="group card-hover border border-[#222] rounded-2xl p-7 hover:border-accent/30 h-full relative overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05), transparent 60%)' }}
-                />
+            <ScrollReveal key={benefit.title} delay={0.1 + index * 0.08} scale className="h-full">
+              <SpotlightCard className="card-hover border border-line rounded-2xl p-7 hover:border-accent/30 h-full">
                 <div className="relative z-10">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-5 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                     {benefit.icon}
@@ -72,7 +70,7 @@ export default function WhatYouGet() {
                   <h3 className="text-base font-semibold text-white mb-2 group-hover:text-accent transition-colors duration-300">{benefit.title}</h3>
                   <p className="text-sm text-white/40 leading-relaxed">{benefit.description}</p>
                 </div>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           ))}
         </div>
