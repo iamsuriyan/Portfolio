@@ -65,7 +65,7 @@ export default function Hero() {
                   Software Engineer · Based in Coimbatore, INDIA
                 </p>
                 <p className="text-sm font-medium text-white/40 tracking-wide">
-                  <span className="text-white/80 font-semibold">1.5+ years</span> shipping production AI products
+                  <span className="text-white/80 font-semibold">2+ years</span> shipping production AI products
                 </p>
               </div>
             </motion.div>

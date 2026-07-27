@@ -17,19 +17,6 @@ const projects = [
     ],
     tech: ['Node.js', 'TypeScript', 'OpenAI', 'PostgreSQL'],
   },
-  {
-    tag: 'Agriculture Tech / AI',
-    title: 'Farm2Com',
-    subtitle: 'Expo React Native Agriculture App',
-    problem: 'Farmers had no fast way to identify crop diseases in the field and lacked a single place to get expert help, news and crop guidance.',
-    solution: 'Developed an agriculture-focused mobile app with community posts, consultant chat, agricultural news, crop management and user profiles — and integrated AI-based disease prediction and plant recommendations to support real-time decision-making.',
-    impact: [
-      'AI disease prediction from a single photo',
-      'Community + consultant chat in one app',
-      'Crop management and news in a unified experience',
-    ],
-    tech: ['React Native', 'Node.js', 'MongoDB', 'AI/ML'],
-  },
 ];
 
 export default function CaseStudies() {

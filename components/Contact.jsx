@@ -49,7 +49,7 @@ export default function Contact() {
             </Magnetic>
             <Magnetic strength={0.25}>
               <a
-                href="./Suriyan-SD.pdf"
+                href="./Suriyan.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
