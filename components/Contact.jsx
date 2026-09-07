@@ -1,88 +1,137 @@
 'use client';
 
-import { FiArrowUpRight, FiMail, FiPhone, FiMapPin, FiDownload } from 'react-icons/fi';
+import { FiArrowUpRight, FiDownload, FiGithub, FiLinkedin, FiMail, FiMessageCircle, FiPhone } from 'react-icons/fi';
 import ScrollReveal from './ScrollReveal';
 import AnimatedText from './AnimatedText';
 import Magnetic from './Magnetic';
 
+const channels = [
+  {
+    icon: FiMail,
+    label: 'Email',
+    value: 'suriyandhanapal@gmail.com',
+    href: 'mailto:suriyandhanapal@gmail.com?subject=Opportunity%20for%20Suriyan',
+  },
+  {
+    icon: FiLinkedin,
+    label: 'LinkedIn',
+    value: 'suriyan-d',
+    href: 'https://www.linkedin.com/in/suriyan-d-74514223a/',
+  },
+  {
+    icon: FiGithub,
+    label: 'GitHub',
+    value: 'iamsuriyan',
+    href: 'https://github.com/iamsuriyan',
+  },
+  {
+    icon: FiPhone,
+    label: 'Phone',
+    value: '+91 81100 44608',
+    href: 'tel:+918110044608',
+  },
+  {
+    icon: FiMessageCircle,
+    label: 'WhatsApp',
+    value: 'Message directly',
+    href: 'https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%E2%80%99d%20like%20to%20talk%20about%20a%20role.',
+  },
+];
+
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 sm:px-8 lg:px-12 py-32 border-t border-line relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.06), transparent 50%)',
-      }} />
+    <section
+      id="contact"
+      className="relative overflow-hidden border-t border-line px-6 py-32 sm:px-8 lg:px-12"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 90%, rgba(91, 127, 255, 0.07), transparent 70%)' }}
+      />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="text-sm font-medium text-accent tracking-wider uppercase mb-8">Let's connect</p>
-            <h2 className="display-text text-white mb-6">
-              <AnimatedText as="span" className="block" stagger={0.1}>
-                LET'S WORK
-              </AnimatedText>
-              <AnimatedText as="span" className="block" delay={0.2}>
-                <span className="gradient-text">TOGETHER</span>
-              </AnimatedText>
-            </h2>
-          </div>
+          <p className="label text-accent/70">Contact</p>
         </ScrollReveal>
 
+        <h2 className="display mt-8 text-fg">
+          <AnimatedText as="span" className="block" stagger={0.06}>
+            Let&apos;s build
+          </AnimatedText>
+          <AnimatedText as="span" className="block" delay={0.12} stagger={0.06}>
+            something solid.
+          </AnimatedText>
+        </h2>
+
         <ScrollReveal delay={0.15}>
-          <p className="text-xl text-white/40 max-w-2xl mx-auto mb-16 leading-relaxed text-center">
-            Open to interesting roles, collaborations, and hard problems worth solving — whether it's an AI system that needs architecting, a product that needs building, or a workflow that needs automating. Reach out and let's talk.
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-fg-muted pretty">
+            I&apos;m currently looking for my next role, and my inbox is always open. Whether
+            you have an opportunity, a question, or just want to say hi — I&apos;ll get back
+            to you.
           </p>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.3} scale>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <Magnetic>
+        <ScrollReveal delay={0.25}>
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Magnetic strength={0.22}>
               <a
-                href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-base font-bold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300"
+                href="mailto:suriyandhanapal@gmail.com?subject=Opportunity%20for%20Suriyan"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-fg px-9 py-4 text-sm font-semibold text-bg transition-colors duration-300 hover:bg-white"
               >
-                GET IN TOUCH
-                <FiArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                Email me
+                <FiArrowUpRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </a>
             </Magnetic>
-            <Magnetic strength={0.25}>
-              <a
-                href="./Suriyan.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className="group inline-flex items-center gap-3 border border-line-strong text-white/70 px-10 py-5 rounded-full text-base font-semibold hover:text-white hover:border-accent/40 hover:bg-white/5 transition-all duration-300"
-              >
-                DOWNLOAD RÉSUMÉ
-                <FiDownload size={17} className="group-hover:translate-y-0.5 transition-transform duration-300" />
-              </a>
-            </Magnetic>
+            <a
+              href="./Suriyan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 rounded-full border border-line-strong px-9 py-4 text-sm font-semibold text-fg-muted transition-colors duration-300 hover:border-accent/50 hover:text-fg"
+            >
+              Download résumé
+              <FiDownload size={15} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+            </a>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.4}>
-          <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <a href="mailto:suriyandhanapal@gmail.com" className="group text-center">
-              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
-                <FiMail size={16} />
-              </div>
-              <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">suriyandhanapal@gmail.com</p>
-            </a>
-            <a href="tel:+918110044608" className="group text-center">
-              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300">
-                <FiPhone size={16} />
-              </div>
-              <p className="text-sm text-white/30 group-hover:text-white/60 transition-colors duration-300">+91 81100 44608</p>
-            </a>
-            <div className="text-center">
-              <div className="w-10 h-10 rounded-full bg-surface border border-line flex items-center justify-center mx-auto mb-3 text-white/40">
-                <FiMapPin size={16} />
-              </div>
-              <p className="text-sm text-white/30">Coimbatore, Tamil Nadu</p>
-            </div>
-          </div>
+        <ScrollReveal delay={0.35}>
+          <ul className="mt-20 grid gap-px overflow-hidden rounded-xl border border-line bg-line text-left sm:grid-cols-2 lg:grid-cols-3">
+            {channels.map(({ icon: Icon, label, value, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="group flex h-full items-center gap-4 bg-surface px-6 py-5 transition-colors duration-300 hover:bg-surface-2"
+                >
+                  <Icon
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-fg-faint transition-colors duration-300 group-hover:text-accent"
+                  />
+                  <span className="min-w-0">
+                    <span className="label block">{label}</span>
+                    <span className="mt-1 block truncate text-sm text-fg-muted transition-colors duration-300 group-hover:text-fg">
+                      {value}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+            <li className="flex h-full items-center gap-4 bg-surface px-6 py-5">
+              <span className="relative flex h-1.5 w-1.5 shrink-0">
+                <span className="dot-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </span>
+              <span>
+                <span className="label block">Location</span>
+                <span className="mt-1 block text-sm text-fg-muted">Coimbatore, India · remote-friendly</span>
+              </span>
+            </li>
+          </ul>
         </ScrollReveal>
       </div>
     </section>

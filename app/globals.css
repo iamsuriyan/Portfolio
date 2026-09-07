@@ -2,175 +2,182 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Design tokens */
-  --color-base: #0a0a0a;
-  --color-surface: #111111;
-  --color-line: #222222;
-  --color-line-soft: #1a1a1a;
-  --color-line-strong: #333333;
-  --color-accent: #6366f1;
-  --color-accent-bright: #818cf8;
-}
+  /* Surfaces */
+  --color-bg: #0a0a0c;
+  --color-surface: #101013;
+  --color-surface-2: #16161b;
 
-html {
-  scroll-behavior: smooth;
-  /* Keep anchored sections clear of the fixed nav */
-  scroll-padding-top: 5rem;
-}
+  /* Hairlines */
+  --color-line: #1d1d23;
+  --color-line-soft: #151519;
+  --color-line-strong: #2a2a33;
 
-/* Lenis smooth-scroll hooks */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
+  /* Text ramp — replaces ad-hoc text-white/xx opacities */
+  --color-fg: #ededf0;
+  --color-fg-muted: #a0a0ab;
+  --color-fg-subtle: #74747f;
+  --color-fg-faint: #4e4e58;
+
+  /* Single accent, used sparingly */
+  --color-accent: #5b7fff;
+  --color-accent-soft: #8ba3ff;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-base);
-  color: #e5e5e5;
-}
-
-::selection {
-  background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
-  color: #fff;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-base); }
-::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
-
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
-  50% { box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.15); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Utility classes */
-.section-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: #666666;
-}
-
-.display-text {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-
-.pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1, #818cf8, #a78bfa, #6366f1);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 4s ease-in-out infinite;
-}
-
-.shimmer-line {
-  background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.15) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-/* Subtle dot grid backdrop */
-.bg-grid {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Fade marquee content at the edges; pause on hover */
-.marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-}
-.marquee-mask:hover > div {
-  animation-play-state: paused;
-}
-
-/* Card hover lift */
-.card-hover {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
-}
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.1);
-}
-
-/* Availability dot pulse */
-@keyframes dot-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.5); }
-}
-.dot-pulse {
-  animation: dot-pulse 2s ease-in-out infinite;
-}
-
-/* Respect users who opt out of motion */
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
   }
-  *,
-  *::before,
-  *::after {
+
+  /* Lenis smooth-scroll hooks */
+  html.lenis,
+  html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg); }
+  ::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3d3d47; }
+}
+
+@layer components {
+  /* ── Typography primitives ───────────────────────────────────── */
+
+  /* Monospaced eyebrow used for section numbers and technical labels */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-fg-faint);
+  }
+
+  .display {
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  /* Hero variant — shares its row with the stack panel, so it has roughly
+     half the measure the centred contact headline gets. */
+  .display-hero {
+    font-size: clamp(2.25rem, 3.7vw, 3.375rem);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+  }
+
+  .headline {
+    font-size: clamp(1.875rem, 3.6vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  /* Optical balance for multi-line paragraph blocks */
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.35; transform: scale(1.6); }
+  }
+  .dot-pulse { animation: dot-pulse 2.4s ease-in-out infinite; }
+
+  /* Slow travel along the connector rails in the architecture diagrams */
+  @keyframes rail-flow {
+    from { background-position: 0 0; }
+    to   { background-position: 24px 0; }
+  }
+
+  /* ── Components ──────────────────────────────────────────────── */
+
+  /* Dot-grid backdrop */
+  .bg-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  /* Marquee: fade the edges, pause on hover */
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-mask:hover > div { animation-play-state: paused; }
+
+  /* Card surface. Elevation comes from the border and a hairline top
+     highlight rather than a drop shadow — reads cleaner on near-black. */
+  .card {
+    position: relative;
+    border: 1px solid var(--color-line);
+    border-radius: 0.875rem;
+    background-color: var(--color-surface);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .card:hover { border-color: var(--color-line-strong); }
+
+  /* Dashed connector rail between diagram nodes */
+  .rail {
+    background-image: linear-gradient(90deg, var(--color-line-strong) 50%, transparent 50%);
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    animation: rail-flow 1.6s linear infinite;
+  }
+  .rail-v {
+    background-image: linear-gradient(180deg, var(--color-line-strong) 50%, transparent 50%);
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

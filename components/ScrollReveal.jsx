@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 const offsets = {
   up: (d) => ({ y: d }),
@@ -19,9 +19,16 @@ export default function ScrollReveal({
   scale = false,
   className = '',
 }) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
+      data-reveal
       initial={{
         opacity: 0,
         filter: 'blur(8px)',

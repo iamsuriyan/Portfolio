@@ -1,169 +1,219 @@
 'use client';
 
 import { useRef } from 'react';
-import { FiArrowDown, FiArrowRight } from 'react-icons/fi';
-import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
-import AnimatedText from './AnimatedText';
+import { FiArrowDown, FiArrowUpRight, FiDownload, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { motion, useScroll, useTransform } from 'motion/react';
 import Magnetic from './Magnetic';
+
+// The stack summary shown in the right-hand panel. Every entry is drawn
+// from work that actually shipped — no aspirational tooling.
+const layers = [
+  { tier: 'interface', items: 'React · Next.js · Redux Toolkit · Expo' },
+  { tier: 'services', items: 'Node.js · Express · FastAPI · gRPC' },
+  { tier: 'intelligence', items: 'LLM · RAG · agents · STT / TTS' },
+  { tier: 'data', items: 'PostgreSQL · MongoDB · pgvector · Redis' },
+  { tier: 'delivery', items: 'Docker · GCP · AWS · GitHub Actions' },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.33, 1, 0.68, 1], delay },
+  }),
+};
 
 export default function Hero() {
   const sectionRef = useRef(null);
-  const reduceMotion = useReducedMotion();
-  // Hold the intro until the preloader curtain starts lifting
-  const base = reduceMotion ? 0 : 1.3;
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
   });
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 28 },
-    show: (delay) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: base + delay },
-    }),
-  };
+  const panelY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const cueOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 relative overflow-hidden">
-      {/* Backdrop: dot grid faded toward the edges, plus a soft accent glow */}
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-svh items-center overflow-hidden px-6 pt-32 pb-20 sm:px-8 lg:px-12"
+    >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-grid pointer-events-none"
-        style={{ maskImage: 'radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%)' }}
+        className="bg-grid pointer-events-none absolute inset-0"
+        style={{ maskImage: 'radial-gradient(ellipse 75% 65% at 50% 35%, black 10%, transparent 72%)' }}
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(circle at 75% 35%, rgba(99, 102, 241, 0.08), transparent 45%)' }}
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse 50% 45% at 72% 30%, rgba(91, 127, 255, 0.09), transparent 70%)' }}
       />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left — Text */}
-          <motion.div className="space-y-8" style={{ y: textY }}>
-            <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
-              <div className="flex items-center gap-3">
-                <span className="relative flex h-3 w-3">
-                  <span className="dot-pulse absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          {/* ── Left: positioning ─────────────────────────────── */}
+          <div>
+            <motion.div data-reveal variants={fadeUp} initial="hidden" animate="show" custom={0}>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/80 py-1.5 pr-4 pl-3">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="dot-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 </span>
-                <span className="text-sm font-medium text-green-400/80 tracking-wide">
-                  Open to new opportunities & collaborations
-                </span>
+                <span className="label text-fg-muted">Open to software engineering roles</span>
               </div>
             </motion.div>
-
-            <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0.1}>
-              <div className="space-y-3">
-                <p className="text-sm font-medium text-white/40 tracking-wide uppercase">
-                  Software Engineer · Based in Coimbatore, INDIA
-                </p>
-                <p className="text-sm font-medium text-white/40 tracking-wide">
-                  <span className="text-white/80 font-semibold">2+ years</span> shipping production AI products
-                </p>
-              </div>
-            </motion.div>
-
-            <h1 className="display-text text-white">
-              <AnimatedText as="span" className="block" delay={base + 0.15} stagger={0.07}>
-                I Build
-              </AnimatedText>
-              <AnimatedText as="span" className="block" delay={base + 0.3} stagger={0.07}>
-                <span className="gradient-text">Intelligent</span>
-              </AnimatedText>
-              <AnimatedText as="span" className="block" delay={base + 0.45} stagger={0.07}>
-                Systems
-              </AnimatedText>
-            </h1>
 
             <motion.p
-              className="text-lg text-white/50 max-w-lg leading-relaxed"
+              className="label mt-10 text-fg-subtle"
+              data-reveal
               variants={fadeUp}
               initial="hidden"
               animate="show"
-              custom={0.55}
+              custom={0.08}
             >
-              Software Engineer building production AI products at Mindgryd — Areev, Atmatic and Axtion. Full-stack development, backend system design, OAuth identity and agentic automation, owned end to end.
+              Suriyan Dhanapal — Coimbatore, India
             </motion.p>
 
-            <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0.7}>
-              <div className="flex flex-col sm:flex-row items-start gap-4 pt-2">
-                <Magnetic>
-                  <a
-                    href="https://wa.me/918110044608?text=Hi%20Suriyan%2C%20I%20have%20a%20project%20I%E2%80%99d%20like%20to%20discuss."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 bg-accent text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-indigo-400 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 pulse-glow"
-                  >
-                    GET IN TOUCH
-                    <FiArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
-                </Magnetic>
+            <motion.h1
+              className="display-hero mt-5 text-fg balance"
+              data-reveal
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={0.16}
+            >
+              I build AI products,{' '}
+              <span className="text-accent">end to end.</span>
+            </motion.h1>
+
+            <motion.p
+              className="mt-8 max-w-xl text-lg leading-relaxed text-fg-muted pretty"
+              data-reveal
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={0.24}
+            >
+              Full-stack engineer with 2 years shipping production systems — Next.js and React
+              on the front, Node.js and FastAPI behind it, and a lot of AI plumbing in between.
+              Currently looking for my next role.
+            </motion.p>
+
+            <motion.div
+              className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-5"
+              data-reveal
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={0.32}
+            >
+              <Magnetic strength={0.22}>
                 <a
-                  href="#work"
-                  className="inline-flex items-center gap-2 mt-2 sm:mt-3 text-sm font-semibold text-white/50 border-b border-white/20 pb-1 hover:text-white hover:border-white transition-all duration-300"
+                  href="mailto:suriyandhanapal@gmail.com?subject=Opportunity%20for%20Suriyan"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-fg px-7 py-3.5 text-sm font-semibold text-bg transition-colors duration-300 hover:bg-white"
                 >
-                  SEE MY WORK
+                  Get in touch
+                  <FiArrowUpRight
+                    size={16}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              </Magnetic>
+
+              <a
+                href="./Suriyan.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-line-strong px-7 py-3.5 text-sm font-semibold text-fg-muted transition-colors duration-300 hover:border-accent/50 hover:text-fg"
+              >
+                Résumé
+                <FiDownload size={15} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
+
+              <div className="flex items-center gap-1">
+                <a
+                  href="https://github.com/iamsuriyan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="rounded-full p-3 text-fg-subtle transition-colors duration-300 hover:text-fg"
+                >
+                  <FiGithub size={18} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/suriyan-d-74514223a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  className="rounded-full p-3 text-fg-subtle transition-colors duration-300 hover:text-fg"
+                >
+                  <FiLinkedin size={18} />
                 </a>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Right — Visual */}
+          {/* ── Right: stack panel ────────────────────────────── */}
           <motion.div
-            className="hidden lg:flex items-center justify-center"
-            style={{ y: visualY }}
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.33, 1, 0.68, 1], delay: base + 0.4 }}
+            className="hidden lg:block"
+            data-reveal
+            style={{ y: panelY }}
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.33, 1, 0.68, 1], delay: 0.3 }}
           >
-            <div className="relative w-full max-w-md aspect-square float-animation">
-              <div className="absolute inset-0 rounded-3xl bg-surface border border-line flex items-center justify-center overflow-hidden">
-                {/* Animated gradient bg */}
-                <div className="absolute inset-0 opacity-20" style={{
-                  background: 'radial-gradient(circle at 30% 40%, rgba(99, 102, 241, 0.3), transparent 60%), radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.2), transparent 50%)',
-                }} />
-                <div className="text-center space-y-5 px-8 relative z-10">
-                  <div className="text-8xl font-black gradient-text">AI</div>
-                  <div className="space-y-2">
-                    <div className="h-2 w-36 mx-auto bg-accent/20 rounded-full shimmer-line" />
-                    <div className="h-2 w-28 mx-auto bg-accent/15 rounded-full shimmer-line" style={{ animationDelay: '0.5s' }} />
-                    <div className="h-2 w-32 mx-auto bg-accent/10 rounded-full shimmer-line" style={{ animationDelay: '1s' }} />
+            <div className="card overflow-hidden">
+              <div className="flex items-center justify-between border-b border-line px-6 py-4">
+                <span className="label text-fg-subtle">Stack in production</span>
+                <span className="label text-emerald-400/80">shipped</span>
+              </div>
+
+              <dl className="divide-y divide-line-soft">
+                {layers.map((layer, i) => (
+                  <motion.div
+                    key={layer.tier}
+                    className="grid grid-cols-[7.5rem_1fr] items-baseline gap-4 px-6 py-4"
+                    data-reveal
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 0.5 + i * 0.08 }}
+                  >
+                    <dt className="font-mono text-[0.6875rem] tracking-wider text-fg-faint uppercase">
+                      {layer.tier}
+                    </dt>
+                    <dd className="text-sm text-fg-muted">{layer.items}</dd>
+                  </motion.div>
+                ))}
+              </dl>
+
+              <div className="grid grid-cols-3 divide-x divide-line-soft border-t border-line bg-surface-2">
+                {[
+                  ['25+', 'providers'],
+                  ['8', 'connectors'],
+                  ['4', 'platforms'],
+                ].map(([value, caption]) => (
+                  <div key={caption} className="px-4 py-5 text-center">
+                    <div className="text-2xl font-semibold tracking-tight text-fg">{value}</div>
+                    <div className="label mt-1.5">{caption}</div>
                   </div>
-                  <p className="text-xs text-white/30 tracking-[0.2em] uppercase">Multi-Agent Orchestration</p>
-                </div>
-              </div>
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-base border border-line-strong rounded-full px-5 py-2.5 text-xs font-semibold text-accent shadow-lg shadow-accent/10" style={{ animation: 'float 5s ease-in-out infinite' }}>
-                AI / ML
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-base border border-line-strong rounded-full px-5 py-2.5 text-xs font-semibold text-white/70 shadow-lg" style={{ animation: 'float 5s ease-in-out infinite 1.5s' }}>
-                Full Stack
-              </div>
-              <div className="absolute top-1/2 -right-6 bg-base border border-line-strong rounded-full px-5 py-2.5 text-xs font-semibold text-white/50 shadow-lg" style={{ animation: 'float 5s ease-in-out infinite 3s' }}>
-                Automation
+                ))}
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll indicator — fades as you start scrolling */}
-        <motion.div style={{ opacity: fadeOut }}>
+        <motion.div style={{ opacity: cueOpacity }}>
           <motion.div
+            className="mt-20 flex items-center gap-3 text-fg-faint"
+            data-reveal
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: base + 1 }}
-            className="mt-20 flex items-center gap-3 text-white/30"
+            transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <div className="w-8 h-px bg-white/20" />
-            <span className="text-xs tracking-widest uppercase">Scroll to explore</span>
-            <FiArrowDown size={12} className="animate-bounce" />
+            <span aria-hidden="true" className="h-px w-8 bg-line-strong" />
+            <span className="label">Scroll</span>
+            <FiArrowDown size={12} aria-hidden="true" />
           </motion.div>
         </motion.div>
       </div>

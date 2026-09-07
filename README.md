@@ -1,37 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio — Suriyan Dhanapal
 
-## Getting Started
+Personal site for Suriyan Dhanapal, a full-stack software engineer working on
+AI/LLM integration and real-time backend infrastructure.
 
-First, run the development server:
+**Live:** https://iamsuriyan.github.io/Portfolio/
+
+## Stack
+
+| | |
+|---|---|
+| Framework | Next.js 15 (App Router, static export) |
+| Styling | Tailwind CSS v4 with design tokens in `app/globals.css` |
+| Motion | `motion` (Framer Motion) + Lenis smooth scroll |
+| Hosting | GitHub Pages via `.github/workflows/deploy.yml` |
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3044
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run dev` clears `NEXT_PUBLIC_BASE_PATH` so the dev server serves from the
+root. Production builds default to the `/Portfolio` base path that GitHub Pages
+needs.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build   # static export to ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
+```
+app/
+  layout.jsx     Fonts, metadata, Person JSON-LD, no-JS fallback
+  page.jsx       Section order and the marquee content
+  globals.css    Design tokens and component classes (cascade-layered)
+  sitemap.js
+components/
+  Hero           Intro, availability, and the stack panel
+  About          Short first-person intro plus quick facts
+  Projects       Four production projects, 2-3 sentences each
+  Experience     Roles and education, one short paragraph each
+  Skills         Grouped technology tags
+  Contact        Ways to reach me
+  SectionHeader  Shared numbered section masthead
+  ScrollReveal, AnimatedText, Magnetic, SpotlightCard, Marquee, Navigation, Footer
+```
 
-To learn more about Next.js, take a look at the following resources:
+Standard portfolio structure: intro, about, projects, experience, skills, contact.
+Keep project blurbs to two or three plain sentences — say what the thing does and
+what you built, not how it is architected. Long technical write-ups belong in a
+blog post, not here.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes for future edits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Updated for deployment
+- **Content tracks the résumé.** `public/Suriyan.pdf` is the source of truth for
+  dates, employers, metrics and tooling. If the résumé changes, update
+  `CaseStudies`, `Experience` and `Skills` to match — the site should never
+  claim something the PDF doesn't support.
+- **Base path.** `basePath`/`assetPrefix` in `next.config.mjs` make every emitted
+  URL resolve under `/Portfolio`, including the font URLs inside the generated
+  CSS. Don't reintroduce a post-build HTML path rewrite; it can't reach those.
+- **Cascade layers.** Component classes in `globals.css` live in
+  `@layer components` so Tailwind utilities can still override them. Moving them
+  out silently breaks things like `class="label text-accent"`.
+- **Reveals are JS-driven.** Anything animating in on scroll carries
+  `data-reveal`, which the `<noscript>` rule in `app/layout.jsx` resets so the
+  page is readable without JavaScript.

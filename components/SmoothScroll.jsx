@@ -10,7 +10,7 @@ export default function SmoothScroll({ children }) {
         root
         options={{
           duration: 1.1,
-          anchors: { offset: -80 },
+          anchors: { offset: -8 },
           smoothWheel: true,
         }}
       >

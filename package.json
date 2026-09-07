@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 3044",
-    "build": "next build && node fix-paths.js",
+    "dev": "NEXT_PUBLIC_BASE_PATH= next dev --turbopack -p 3044",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && node fix-paths.js && touch out/.nojekyll"
+    "deploy": "next build && touch out/.nojekyll"
   },
   "dependencies": {
     "lenis": "^1.3.23",

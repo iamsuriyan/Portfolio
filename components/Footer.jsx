@@ -1,32 +1,35 @@
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
+const socials = [
+  { href: 'https://github.com/iamsuriyan', label: 'GitHub', Icon: FiGithub },
+  { href: 'https://www.linkedin.com/in/suriyan-d-74514223a/', label: 'LinkedIn', Icon: FiLinkedin },
+  { href: 'mailto:suriyandhanapal@gmail.com', label: 'Email', Icon: FiMail },
+];
+
 export default function Footer() {
   return (
-    <footer className="px-6 sm:px-8 lg:px-12 py-10 border-t border-line-soft">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-            <span className="text-sm text-white/20 font-medium">
-              &copy; {new Date().getFullYear()} Suriyan
-            </span>
-            <span className="hidden sm:block text-white/10">|</span>
-            <span className="text-sm text-white/15">
-              Software Engineer · AI & Full-Stack
-            </span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <a href="https://github.com/iamsuriyan" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-accent transition-colors duration-300">
-              <FiGithub size={18} />
-            </a>
-            <a href="https://www.linkedin.com/in/suriyan-d-74514223a/" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-accent transition-colors duration-300">
-              <FiLinkedin size={18} />
-            </a>
-            <a href="mailto:suriyandhanapal@gmail.com" className="text-white/20 hover:text-accent transition-colors duration-300">
-              <FiMail size={18} />
-            </a>
-          </div>
+    <footer className="border-t border-line px-6 py-10 sm:px-8 lg:px-12">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+        <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-6 sm:text-left">
+          <span className="label">&copy; {new Date().getFullYear()} Suriyan Dhanapal</span>
+          <span aria-hidden="true" className="hidden h-3 w-px bg-line-strong sm:block" />
+          <span className="label">Full-Stack Engineer · AI &amp; LLM Integration</span>
         </div>
+
+        <ul className="flex items-center gap-1">
+          {socials.map(({ href, label, Icon }) => (
+            <li key={label}>
+              <a
+                href={href}
+                {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                aria-label={label}
+                className="block rounded-full p-2.5 text-fg-faint transition-colors duration-300 hover:text-fg"
+              >
+                <Icon size={17} />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   );
