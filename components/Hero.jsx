@@ -95,7 +95,7 @@ export default function Hero() {
               animate="show"
               custom={0.24}
             >
-              Full-stack engineer with 2 years shipping production systems — Next.js and React
+              Software engineer with 2 years shipping production systems — Next.js and React
               on the front, Node.js and FastAPI behind it, and a lot of AI plumbing in between.
               Currently looking for my next role.
             </motion.p>

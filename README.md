@@ -1,6 +1,6 @@
 # Portfolio — Suriyan Dhanapal
 
-Personal site for Suriyan Dhanapal, a full-stack software engineer working on
+Personal site for Suriyan Dhanapal, a software engineer working on
 AI/LLM integration and real-time backend infrastructure.
 
 **Live:** https://iamsuriyan.github.io/Portfolio/

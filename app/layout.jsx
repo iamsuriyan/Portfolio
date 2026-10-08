@@ -16,9 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://iamsuriyan.github.io/Portfolio/";
 
-const title = "Suriyan Dhanapal — Full-Stack Software Engineer | AI & LLM Integration";
+const title = "Suriyan Dhanapal — Software Engineer | AI & LLM Integration";
 const description =
-  "Full-stack software engineer with 2 years shipping production systems end to end. Built a unified connector layer for 25+ STT, TTS and LLM providers on a real-time voice-AI platform, plus OAuth identity, RAG retrieval, and webhook delivery infrastructure.";
+  "Software engineer with 2 years shipping production systems end to end. Built a unified connector layer for 25+ STT, TTS and LLM providers on a real-time voice-AI platform, plus OAuth identity, RAG retrieval, and webhook delivery infrastructure.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -29,7 +29,7 @@ export const metadata = {
   description,
   applicationName: "Suriyan Dhanapal — Portfolio",
   keywords: [
-    "full-stack software engineer",
+    "software engineer",
     "AI engineer",
     "LLM integration",
     "RAG retrieval",
@@ -78,7 +78,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Suriyan Dhanapal",
-  jobTitle: "Full-Stack Software Engineer",
+  jobTitle: "Software Engineer",
   description,
   url: SITE_URL,
   email: "mailto:suriyandhanapal@gmail.com",

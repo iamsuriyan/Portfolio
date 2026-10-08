@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-6 sm:text-left">
           <span className="label">&copy; {new Date().getFullYear()} Suriyan Dhanapal</span>
           <span aria-hidden="true" className="hidden h-3 w-px bg-line-strong sm:block" />
-          <span className="label">Full-Stack Engineer · AI &amp; LLM Integration</span>
+          <span className="label">Software Engineer · AI &amp; LLM Integration</span>
         </div>
 
         <ul className="flex items-center gap-1">

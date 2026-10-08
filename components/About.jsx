@@ -20,7 +20,7 @@ export default function About() {
           <div className="space-y-5 text-lg leading-relaxed text-fg-muted pretty">
             <ScrollReveal>
               <p>
-                Hi, I&apos;m Suriyan. I&apos;m a full-stack engineer in Coimbatore, India, and
+                Hi, I&apos;m Suriyan. I&apos;m a software engineer in Coimbatore, India, and
                 I&apos;ve spent the last two years building AI products — mostly the parts users
                 never see.
               </p>
