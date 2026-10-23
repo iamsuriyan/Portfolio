@@ -21,7 +21,7 @@ export default function About() {
             <ScrollReveal>
               <p>
                 Hi, I&apos;m Suriyan. I&apos;m a software engineer in Coimbatore, India, and
-                I&apos;ve spent the last two years building AI products — mostly the parts users
+                I&apos;ve spent over two years building AI products — mostly the parts users
                 never see.
               </p>
             </ScrollReveal>
