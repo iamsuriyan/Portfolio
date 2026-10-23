@@ -18,7 +18,7 @@ const SITE_URL = "https://iamsuriyan.github.io/Portfolio/";
 
 const title = "Suriyan Dhanapal — Software Engineer | AI & LLM Integration";
 const description =
-  "Software engineer with 2 years shipping production systems end to end. Built a unified connector layer for 25+ STT, TTS and LLM providers on a real-time voice-AI platform, plus OAuth identity, RAG retrieval, and webhook delivery infrastructure.";
+  "Software engineer with 2+ years shipping production systems end to end. Built a unified connector layer for 25+ STT, TTS and LLM providers on a real-time voice-AI platform, plus OAuth identity, RAG retrieval, and webhook delivery infrastructure.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

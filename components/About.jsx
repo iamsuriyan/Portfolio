@@ -5,7 +5,7 @@ import SectionHeader from './SectionHeader';
 
 const facts = [
   { key: 'Location', value: 'Coimbatore, India' },
-  { key: 'Experience', value: '2 years' },
+  { key: 'Experience', value: '2+ years' },
   { key: 'Focus', value: 'Backend & AI integration' },
   { key: 'Status', value: 'Open to new roles' },
 ];
