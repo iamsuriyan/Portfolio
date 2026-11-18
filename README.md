@@ -1,7 +1,7 @@
 # Portfolio — Suriyan Dhanapal
 
-Personal site for Suriyan Dhanapal, a software engineer working on
-AI/LLM integration and real-time backend infrastructure.
+Personal site for Suriyan Dhanapal, a Generative AI product engineer working on
+end-to-end LLM products, hybrid retrieval, and real-time backend systems.
 
 **Live:** https://iamsuriyan.github.io/Portfolio/
 

@@ -11,23 +11,23 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const marqueeItems = [
-  'LLM INTEGRATION',
-  'RAG / RETRIEVAL',
+  'GENERATIVE AI',
+  'HYBRID RETRIEVAL',
+  'AI AGENTS',
+  'LANGGRAPH',
+  'RAG / PGVECTOR',
+  'WEAVIATE',
   'REAL-TIME VOICE AI',
   'WEBRTC / SIP',
-  'OAUTH 2.0',
-  'WEBHOOK DELIVERY',
-  'NEXT.JS',
-  'REACT NATIVE',
-  'NODE.JS',
-  'FASTAPI',
-  'TYPESCRIPT',
   'PYTHON',
-  'POSTGRESQL',
-  'PGVECTOR',
-  'REDIS',
+  'FASTAPI',
+  'NEXT.JS',
+  'REACT',
+  'TYPESCRIPT',
+  'REDIS / RQ',
+  'OAUTH 2.0',
   'DOCKER',
-  'GCP',
+  'GCP / AWS',
 ];
 
 export default function Home() {

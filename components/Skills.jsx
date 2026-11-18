@@ -4,31 +4,80 @@ import { motion, useReducedMotion } from 'motion/react';
 import ScrollReveal from './ScrollReveal';
 import SectionHeader from './SectionHeader';
 
-// Mirrors the résumé's own taxonomy so the two read as one document.
+// Mirrors the résumé's taxonomy so the site and PDF read as one document.
 const stack = [
   {
-    category: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'Python'],
+    category: 'GenAI & LLMs',
+    items: [
+      'OpenAI',
+      'Google Vertex AI / Gemini',
+      'AWS Bedrock',
+      'Groq',
+      'Sarvam',
+      'AI Agents',
+      'LangGraph',
+      'Tool / Function Calling',
+      'Prompt Design',
+      'Human-in-the-Loop Gates',
+      'Provider Regression Testing',
+    ],
+  },
+  {
+    category: 'Retrieval & Search',
+    items: [
+      'RAG',
+      'Hybrid Retrieval',
+      'Semantic Search',
+      'pgvector',
+      'Weaviate',
+      'Embeddings',
+      'Chunking',
+      'Knowledge-Base Ingestion',
+      'Multi-Tenant Retrieval',
+    ],
+  },
+  {
+    category: 'Speech & Multimodal',
+    items: [
+      'STT / TTS / STS Pipelines',
+      'Whisper',
+      'ElevenLabs',
+      'Real-Time Voice Agents',
+      'WebRTC',
+      'SIP',
+      'Vision Models',
+      'OCR (pdfplumber, camelot, pytesseract)',
+    ],
+  },
+  {
+    category: 'Backend & Systems',
+    items: [
+      'Python',
+      'FastAPI',
+      'Node.js',
+      'Express',
+      'REST APIs',
+      'Microservices',
+      'gRPC',
+      'WebSockets',
+      'Async Workers (Redis/RQ)',
+      'OAuth 2.0',
+      'JWT',
+      'RBAC',
+      'Webhooks',
+    ],
+  },
+  {
+    category: 'Databases & Storage',
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Cassandra', 'SQLAlchemy', 'SQL', 'AWS S3'],
   },
   {
     category: 'Frontend',
-    items: ['React', 'Next.js', 'Redux Toolkit', 'React Native', 'Expo', 'Vite', 'Tailwind CSS'],
+    items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Redux Toolkit', 'React Native (Expo)', 'Vite', 'Tailwind CSS'],
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'FastAPI', 'REST APIs', 'gRPC', 'WebSockets', 'WebRTC', 'OAuth 2.0', 'JWT'],
-  },
-  {
-    category: 'Databases & infra',
-    items: ['PostgreSQL', 'MongoDB', 'Cassandra', 'Redis', 'pgvector', 'Docker', 'GCP', 'AWS', 'GitHub Actions'],
-  },
-  {
-    category: 'AI',
-    items: ['OpenAI', 'Gemini', 'Vertex AI', 'AWS Bedrock', 'Groq', 'LangGraph', 'RAG', 'Embeddings', 'Weaviate', 'Whisper', 'ElevenLabs'],
-  },
-  {
-    category: 'Tools',
-    items: ['Git', 'Postman', 'Claude Code'],
+    category: 'Infra & Tools',
+    items: ['Docker', 'Linux / Shell', 'Nginx', 'GCP', 'AWS', 'GitHub Actions (CI/CD)', 'Git', 'Claude Code'],
   },
 ];
 
@@ -42,7 +91,7 @@ export default function Skills() {
           index="04"
           label="Skills"
           title="What I work with"
-          lede="Tools I've actually shipped something with."
+          lede="Tools I've actually shipped production systems with."
         />
 
         <div>

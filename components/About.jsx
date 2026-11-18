@@ -6,8 +6,8 @@ import SectionHeader from './SectionHeader';
 const facts = [
   { key: 'Location', value: 'Coimbatore, India' },
   { key: 'Experience', value: '2+ years' },
-  { key: 'Focus', value: 'Backend & AI integration' },
-  { key: 'Status', value: 'Open to new roles' },
+  { key: 'Focus', value: 'GenAI, RAG & Backend' },
+  { key: 'Status', value: 'Open to opportunities' },
 ];
 
 export default function About() {
@@ -20,31 +20,36 @@ export default function About() {
           <div className="space-y-5 text-lg leading-relaxed text-fg-muted pretty">
             <ScrollReveal>
               <p>
-                Hi, I&apos;m Suriyan. I&apos;m a software engineer in Coimbatore, India, and
-                I&apos;ve spent 2+ years building AI products — mostly the parts users
-                never see.
+                Hi, I&apos;m Suriyan. I&apos;m a Generative AI product engineer in Coimbatore,
+                India, with 2+ years of experience building and shipping LLM products end to end —
+                from knowledge ingestion and retrieval to backend architecture, frontend interfaces,
+                and production deployment.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p>
-                Most of my work is backend: login systems, integrations with other companies&apos;
-                APIs, real-time infrastructure, and the AI pipelines that make agents actually
-                useful. But I&apos;m comfortable across the whole stack — I&apos;ve built Next.js
-                and React frontends, shipped a React Native app that a delivery team used every
-                day, and designed the databases underneath all of it.
+                Most of my work is focused on reliable, auditable AI systems: building Indian
+                customs compliance platforms with hybrid retrieval over official regulatory sources
+                (DGFT, GST, CBIC, ICEGATE), designing multi-tenant RAG platforms on pgvector and
+                Weaviate with strict corpus isolation, and connecting 25+ LLM, STT and TTS
+                providers behind unified real-time voice infrastructure.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p>
-                I like problems that start out vague. Almost everything I&apos;ve shipped began as
-                &ldquo;we need this to work somehow&rdquo; rather than a finished spec, and I enjoy
-                the part where you figure out what it should actually be.
+                I build across the full stack — robust Python/FastAPI backends with Redis/RQ async
+                workers, responsive React and Next.js interfaces, mobile apps in React Native, and
+                cloud deployments with Docker. I specialize in agent design with human-in-the-loop
+                approval controls and cost-optimized extraction pipelines that spend model inference
+                only where deterministic parsing ends.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p>
-                Right now I&apos;m looking for my next role — ideally somewhere I can keep working
-                on AI systems and backend infrastructure.
+                I like problems that start out vague. Almost everything I&apos;ve shipped began as
+                &ldquo;we need this to work reliably in production&rdquo; rather than a finished spec,
+                and I love figuring out the architecture and shipping products that real teams rely on
+                daily.
               </p>
             </ScrollReveal>
           </div>

@@ -7,38 +7,38 @@ import SpotlightCard from './SpotlightCard';
 
 const projects = [
   {
+    title: 'Thavasi Scrutiny',
+    org: 'Cooper Compass · IIT Bombay-incubated',
+    year: '2026 – Present',
+    blurb:
+      'Indian customs compliance platform piloted with real Customs House Agents. Verifies draft checklists against source documents with field-by-field discrepancy reports traced to exact cells, answers trade and tax queries via a hybrid-retrieval compliance agent (DGFT, GST, CBIC, ICEGATE), and runs a cost-gated hybrid extraction pipeline.',
+    tech: ['Python', 'FastAPI', 'Hybrid Retrieval', 'OpenAI', 'Vision OCR', 'PostgreSQL', 'Redis/RQ', 'React'],
+    href: 'https://thavasi.coopercompass.com',
+    linkLabel: 'thavasi.coopercompass.com',
+  },
+  {
     title: 'Real-time Voice AI Platform',
     org: 'Mindgryd',
     year: '2026',
     blurb:
-      'A platform for AI agents that talk to people over live calls. I connected 25+ speech and language providers — OpenAI, Whisper, ElevenLabs, Gemini and more — behind one interface, and built the dashboard the team uses to debug calls as they happen.',
-    tech: ['FastAPI', 'React', 'WebRTC', 'gRPC', 'PostgreSQL', 'Redis'],
+      'A platform for AI agents that talk to people over live calls. Connected 25+ speech and language providers — OpenAI, Whisper, ElevenLabs, Gemini, Sarvam and more — behind a unified interface on FlowCat (serving ~100 live calls/day), and built the real-time triage dashboard.',
+    tech: ['FastAPI', 'Python', 'WebRTC', 'SIP', 'gRPC', 'Whisper', 'ElevenLabs', 'React'],
   },
   {
     title: 'AI Memory & Context Platform',
     org: 'Mindgryd',
     year: '2025',
     blurb:
-      'Gives AI agents memory of your own documents so they answer from your data, not guesswork. I built the sign-in system, the 8 integrations that pull files from Drive, Dropbox, Notion and SharePoint, and the service that keeps other apps in sync.',
-    tech: ['FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'OAuth 2.0'],
+      'Multi-tenant RAG pipeline giving AI agents grounded memory over enterprise documents. Built metadata-scoped retrieval on PostgreSQL/pgvector for strict tenant isolation, 8 automated data connectors (Drive, Dropbox, Notion, SharePoint), and OAuth identity infrastructure.',
+    tech: ['FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'OAuth 2.0', 'Embeddings'],
   },
   {
     title: 'Workflow Automation Platform',
     org: 'Mindgryd',
     year: '2025',
     blurb:
-      'A tool for building AI agents that run workflows on their own, with settings for how far an agent can go before a human signs off. I built the frontend, the Razorpay and PayPal payments, and the search that surfaces the right agent out of thousands.',
-    tech: ['Next.js', 'TypeScript', 'Redux Toolkit', 'FastAPI', 'MongoDB', 'Weaviate'],
-  },
-  {
-    title: 'Cooper Compass',
-    org: 'Contract · IIT Bombay-incubated',
-    year: '2025',
-    blurb:
-      'Reads shipping emails and their scanned attachments, pulls out job and BL numbers automatically, and groups everything by shipment. Cut a two-hour manual job down to about eight minutes for 20+ pilot users.',
-    tech: ['Node.js', 'TypeScript', 'OpenAI', 'Google Vision', 'PostgreSQL'],
-    href: 'https://coopercompass.com',
-    linkLabel: 'coopercompass.com',
+      'Autonomous AI agent platform with human-in-the-loop approval gates governing actions before sign-off. Built the workspace-aware agent recommendation system using Weaviate semantic search, the Next.js frontend, and the Razorpay/PayPal billing integrations.',
+    tech: ['Next.js', 'TypeScript', 'LangGraph', 'Weaviate', 'FastAPI', 'Redux Toolkit'],
   },
 ];
 

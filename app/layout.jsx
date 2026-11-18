@@ -16,9 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://iamsuriyan.github.io/Portfolio/";
 
-const title = "Suriyan Dhanapal — Software Engineer | AI & LLM Integration";
+const title = "Suriyan Dhanapal — Generative AI & Product Engineer | Backend Systems";
 const description =
-  "Software engineer with 2+ years shipping production systems end to end. Built a unified connector layer for 25+ STT, TTS and LLM providers on a real-time voice-AI platform, plus OAuth identity, RAG retrieval, and webhook delivery infrastructure.";
+  "Generative AI product engineer with 2+ years shipping production LLM systems end to end. Built Indian customs compliance platforms with hybrid retrieval, multi-tenant RAG on pgvector and Weaviate, and a unified connector layer for 25+ LLM and speech providers.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -29,15 +29,20 @@ export const metadata = {
   description,
   applicationName: "Suriyan Dhanapal — Portfolio",
   keywords: [
+    "Generative AI",
+    "product engineer",
     "software engineer",
     "AI engineer",
     "LLM integration",
-    "RAG retrieval",
+    "hybrid retrieval",
+    "RAG",
+    "pgvector",
+    "Weaviate",
     "voice AI",
-    "OAuth 2.0",
-    "Next.js",
     "FastAPI",
-    "Node.js",
+    "Python",
+    "React",
+    "Next.js",
     "Coimbatore",
   ],
   authors: [{ name: "Suriyan Dhanapal", url: SITE_URL }],
@@ -78,7 +83,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Suriyan Dhanapal",
-  jobTitle: "Software Engineer",
+  jobTitle: "Generative AI Product Engineer",
   description,
   url: SITE_URL,
   email: "mailto:suriyandhanapal@gmail.com",
@@ -94,16 +99,22 @@ const personSchema = {
     name: "Dr. N.G.P. Institute of Technology",
   },
   knowsAbout: [
-    "LLM integration",
-    "Retrieval-augmented generation",
+    "Generative AI",
+    "AI Agents",
+    "LangGraph",
+    "Hybrid Retrieval",
+    "RAG",
+    "pgvector",
+    "Weaviate",
     "Real-time voice AI",
     "OAuth 2.0",
-    "Distributed webhook delivery",
+    "FastAPI",
+    "Python",
     "React",
     "Next.js",
     "Node.js",
-    "FastAPI",
     "PostgreSQL",
+    "Docker",
   ],
   sameAs: [
     "https://github.com/iamsuriyan",

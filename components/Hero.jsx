@@ -8,11 +8,11 @@ import Magnetic from './Magnetic';
 // The stack summary shown in the right-hand panel. Every entry is drawn
 // from work that actually shipped — no aspirational tooling.
 const layers = [
-  { tier: 'interface', items: 'React · Next.js · Redux Toolkit · Expo' },
-  { tier: 'services', items: 'Node.js · Express · FastAPI · gRPC' },
-  { tier: 'intelligence', items: 'LLM · RAG · agents · STT / TTS' },
-  { tier: 'data', items: 'PostgreSQL · MongoDB · pgvector · Redis' },
-  { tier: 'delivery', items: 'Docker · GCP · AWS · GitHub Actions' },
+  { tier: 'interface', items: 'React · Next.js · TypeScript · Redux · Vite · Expo' },
+  { tier: 'services', items: 'Python · FastAPI · Node.js · gRPC · Redis/RQ' },
+  { tier: 'intelligence', items: 'Hybrid RAG · Agents · LangGraph · Voice (WebRTC)' },
+  { tier: 'data', items: 'PostgreSQL · pgvector · Weaviate · Redis · MongoDB' },
+  { tier: 'delivery', items: 'Docker · Linux · Nginx · GCP · AWS · CI/CD' },
 ];
 
 const fadeUp = {
@@ -60,7 +60,7 @@ export default function Hero() {
                   <span className="dot-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 </span>
-                <span className="label text-fg-muted">Open to software engineering roles</span>
+                <span className="label text-fg-muted">Open to engineering opportunities</span>
               </div>
             </motion.div>
 
@@ -95,9 +95,7 @@ export default function Hero() {
               animate="show"
               custom={0.24}
             >
-              Software engineer with 2+ years shipping production systems — Next.js and React
-              on the front, Node.js and FastAPI behind it, and a lot of AI plumbing in between.
-              Currently looking for my next role.
+              Generative AI product engineer with 2+ years shipping production systems end to end — from knowledge ingestion and hybrid retrieval to Python/FastAPI backends, React interfaces, and cloud deployment.
             </motion.p>
 
             <motion.div
@@ -191,7 +189,7 @@ export default function Hero() {
                 {[
                   ['25+', 'providers'],
                   ['8', 'connectors'],
-                  ['4', 'platforms'],
+                  ['2+ yrs', 'shipping AI'],
                 ].map(([value, caption]) => (
                   <div key={caption} className="px-4 py-5 text-center">
                     <div className="text-2xl font-semibold tracking-tight text-fg">{value}</div>

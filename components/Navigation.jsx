@@ -102,7 +102,7 @@ export default function Navigation() {
           >
             Suriyan Dhanapal
             <span className="ml-2.5 hidden font-mono text-[0.6875rem] font-normal tracking-wider text-fg-faint uppercase sm:inline">
-              Software Engineer
+              Product Engineer
             </span>
           </a>
 
